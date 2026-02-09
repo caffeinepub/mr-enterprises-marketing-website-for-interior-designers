@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-publish-the-current-draft-version-of-the-mr-enterprises-marketing-website-to-the-live-public-internet-computer-environment-by-following-the-documented-deployment-steps-in-frontend-deployment-md-build-production-bundle-deploy-to-ic-mainnet-and-verify-the-live-site",
+      "featureTitle": "Publish the current draft version of the MR Enterprises marketing website to the live/public Internet Computer environment by following the documented deployment steps in frontend/DEPLOYMENT.md (build production bundle, deploy to IC mainnet, and verify the live site).",
+      "files": [
+        "frontend/DEPLOYMENT.md"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,2 +1,3 @@
-# mr-enterprises-marketing-website-for-interior-designers
-Exported from Caffeine project: MR Enterprises marketing website (for interior designers)
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

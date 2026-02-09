@@ -1,0 +1,56 @@
+{
+  "kind": "build_request",
+  "title": "Publish the current MR Enterprises draft site to the live Internet Computer environment",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-22",
+      "text": "Publish the current draft version of the MR Enterprises marketing website to the live/public Internet Computer environment by following the documented deployment steps in frontend/DEPLOYMENT.md (build production bundle, deploy to IC mainnet, and verify the live site).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Run the production build step successfully (npm run build) and confirm a dist/ output is produced.",
+        "Deploy the frontend canister to IC mainnet successfully (dfx deploy --network ic) with no deployment errors.",
+        "On the live canister URL, confirm the site loads without requiring authentication or preview access.",
+        "On the live site, confirm all primary sections render without errors: Header, Hero, Gallery, Collections, Benefits, Contact, Footer.",
+        "On the live site, verify navigation links smooth-scroll to the correct sections (Gallery, Collections, Contact).",
+        "On the live site, verify all images render correctly (hero background, gallery images, logo assets).",
+        "On the live site, verify contact details match the configured values (phone and email) and related links work (tel: and mailto:).",
+        "On the live site, verify mobile responsiveness, including the mobile menu behavior.",
+        "On the live site, verify both light and dark themes render correctly.",
+        "On the live site, verify gallery filtering and image modal/lightbox behavior work as expected.",
+        "On the live site, verify all CTAs are clickable and functional."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any frontend or backend functionality beyond what is required to complete deployment; this change is a publish/deploy action.",
+    "Follow the deployment process and verification checklist documented in frontend/DEPLOYMENT.md."
+  ],
+  "nonGoals": [
+    "Adding new site sections or changing existing page content/copy.",
+    "Changing branding, images, theme, layout, or SEO metadata as part of this publish step.",
+    "Adding any new backend functionality; the backend canister should remain unchanged unless deployment requires it."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

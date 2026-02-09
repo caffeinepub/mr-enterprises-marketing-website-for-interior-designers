@@ -1,0 +1,31 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Publish MR Enterprises draft site to IC mainnet (deployment-only)",
+  "requirements": [
+    {
+      "id": "REQ-22",
+      "summary": "Publish the existing MR Enterprises marketing site to IC mainnet by following and completing the deployment + verification checklist in frontend/DEPLOYMENT.md.",
+      "acceptanceCriteria": [
+        "Run the production build step successfully (npm run build) and confirm a dist/ output is produced.",
+        "Deploy the frontend canister to IC mainnet successfully (dfx deploy --network ic) with no deployment errors.",
+        "On the live canister URL, confirm the site loads without requiring authentication or preview access.",
+        "On the live site, confirm all primary sections render without errors: Header, Hero, Gallery, Collections, Benefits, Contact, Footer.",
+        "On the live site, verify navigation links smooth-scroll to the correct sections (Gallery, Collections, Contact).",
+        "On the live site, verify all images render correctly (hero background, gallery images, logo assets).",
+        "On the live site, verify contact details match the configured values (phone and email) and related links work (tel: and mailto:).",
+        "On the live site, verify mobile responsiveness, including the mobile menu behavior.",
+        "On the live site, verify both light and dark themes render correctly.",
+        "On the live site, verify gallery filtering and image modal/lightbox behavior work as expected.",
+        "On the live site, verify all CTAs are clickable and functional."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Align the documented deployment steps and post-deployment verification checklist to exactly match REQ-22 acceptance criteria (build produces dist/, deploy to IC mainnet, live URL verification with no auth required, section rendering checks, smooth-scroll nav checks, image rendering checks including hero/gallery/logo assets, tel:/mailto: link verification against frontend/src/config/contact.ts, mobile menu behavior, light/dark theme checks, gallery filtering + modal behavior, and CTA click-through checks). Keep changes documentation-only; do not alter site functionality."
+        }
+      ]
+    }
+  ]
+}
