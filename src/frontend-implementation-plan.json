@@ -1,29 +1,97 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Publish MR Enterprises draft site to IC mainnet (deployment-only)",
+  "title": "Fix gallery image visibility by correcting static asset paths and adding fallbacks",
   "requirements": [
     {
-      "id": "REQ-22",
-      "summary": "Publish the existing MR Enterprises marketing site to IC mainnet by following and completing the deployment + verification checklist in frontend/DEPLOYMENT.md.",
+      "id": "REQ-31",
+      "summary": "Ensure the Gallery references the exact deployable static asset paths for the 9 JPEG photos and that those files exist under the public assets directory used in production.",
       "acceptanceCriteria": [
-        "Run the production build step successfully (npm run build) and confirm a dist/ output is produced.",
-        "Deploy the frontend canister to IC mainnet successfully (dfx deploy --network ic) with no deployment errors.",
-        "On the live canister URL, confirm the site loads without requiring authentication or preview access.",
-        "On the live site, confirm all primary sections render without errors: Header, Hero, Gallery, Collections, Benefits, Contact, Footer.",
-        "On the live site, verify navigation links smooth-scroll to the correct sections (Gallery, Collections, Contact).",
-        "On the live site, verify all images render correctly (hero background, gallery images, logo assets).",
-        "On the live site, verify contact details match the configured values (phone and email) and related links work (tel: and mailto:).",
-        "On the live site, verify mobile responsiveness, including the mobile menu behavior.",
-        "On the live site, verify both light and dark themes render correctly.",
-        "On the live site, verify gallery filtering and image modal/lightbox behavior work as expected.",
-        "On the live site, verify all CTAs are clickable and functional."
+        "All 9 gallery thumbnails render (no broken/blank images) on the deployed site.",
+        "Clicking any gallery item opens the modal with the same image rendered at full size.",
+        "No gallery image URLs return 404s in the browser Network tab.",
+        "The Gallery section continues to show only the 9 uploaded JPEG photos (no older generated texture images appear)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/GallerySection.tsx",
+          "operation": "modify",
+          "description": "Update the gallery image source list to reference only the 9 uploaded JPEGs via stable public static paths under /assets/gallery, and remove any references to non-gallery/generated texture assets. Keep categories/layout/modal design unchanged. (Uses existing shadcn-ui Dialog/DialogContent/DialogTrigger patterns already in this file—Verify the component's usage instructions before implementing.)"
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.22 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.39.22 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.35.08 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.35.08 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.23 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.39.23 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.16 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.39.16 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.18 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.43.18 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.25 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.39.25 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.35.09 PM.jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.35.09 PM.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM (1).jpeg",
+          "operation": "create",
+          "description": "Add the JPEG file to the deployable public assets directory so it is served in production at /assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM (1).jpeg."
+        }
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "summary": "Add a visible per-image fallback UI for failed gallery image loads without breaking hover overlay or modal behavior.",
+      "acceptanceCriteria": [
+        "If an image URL is invalid, the grid cell renders a clear fallback placeholder instead of an empty/blank area.",
+        "Valid images still render normally with the existing hover overlay and click-to-enlarge dialog behavior unchanged."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/GallerySection.tsx",
+          "operation": "modify",
+          "description": "Implement robust image load error handling for both the grid thumbnail and the modal view: when an image fails to load, render a neutral placeholder block with English text (e.g., \"Image unavailable\") while preserving the existing hover overlay structure and click-to-open modal behavior for valid images. (Uses existing shadcn-ui Dialog components—Verify the component's usage instructions before implementing.)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-33",
+      "summary": "Update deployment documentation to reflect rebuilding and redeploying after the gallery asset path fix so production is updated.",
+      "acceptanceCriteria": [
+        "A new production deployment completes successfully.",
+        "After deployment, the live site shows the 9 photos in the Gallery section with no missing images."
       ],
       "file_operations": [
         {
           "path": "frontend/DEPLOYMENT.md",
           "operation": "modify",
-          "description": "Align the documented deployment steps and post-deployment verification checklist to exactly match REQ-22 acceptance criteria (build produces dist/, deploy to IC mainnet, live URL verification with no auth required, section rendering checks, smooth-scroll nav checks, image rendering checks including hero/gallery/logo assets, tel:/mailto: link verification against frontend/src/config/contact.ts, mobile menu behavior, light/dark theme checks, gallery filtering + modal behavior, and CTA click-through checks). Keep changes documentation-only; do not alter site functionality."
+          "description": "Expand the production build/redeploy instructions to explicitly include verifying the 9 JPEGs exist under frontend/public/assets/gallery, running a clean production build, and redeploying to ensure the updated static assets are included in the deployed bundle."
         }
       ]
     }

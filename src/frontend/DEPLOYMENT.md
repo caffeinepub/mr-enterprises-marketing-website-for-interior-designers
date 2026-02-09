@@ -12,5 +12,7 @@ This document describes how to deploy the MR Enterprises marketing site to the I
 
 ### Deployment Steps
 
-#### 1. Build the Production Bundle
+#### 1. Verify Static Assets
+
+Before building, ensure all gallery images are present in the correct location:
 

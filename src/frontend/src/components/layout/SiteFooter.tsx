@@ -1,11 +1,8 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Navigation } from 'lucide-react';
 import { CONTACT } from '@/config/contact';
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
-  const appIdentifier = encodeURIComponent(
-    typeof window !== 'undefined' ? window.location.hostname : 'carpet-manufacturer'
-  );
 
   return (
     <footer className="bg-secondary/30 border-t border-border">
@@ -63,29 +60,34 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin size={16} className="mt-0.5 text-muted-foreground" />
-                <span className="text-muted-foreground">
-                  Design District, Your City
-                </span>
+                <a
+                  href={CONTACT.location.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {CONTACT.location.display}
+                </a>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Navigation size={16} className="mt-0.5 text-muted-foreground" />
+                <a
+                  href={CONTACT.location.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Get Directions
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
             © {currentYear} MR Enterprises. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Built with ❤️ using{' '}
-            <a
-              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appIdentifier}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-foreground transition-colors underline"
-            >
-              caffeine.ai
-            </a>
           </p>
         </div>
       </div>

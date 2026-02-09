@@ -1,18 +1,49 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T19:22:59.971Z",
+  "generatedAt": "2026-02-09T20:15:28.378Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
-    "implemented": 1,
+    "total": 3,
+    "implemented": 3,
     "items": [
       {
-        "id": "REQ-22",
-        "summary": "Publish the current draft version of the MR Enterprises marketing website to the live/public Internet Computer environment by following the documented deployment steps in frontend/DEPLOYMENT.md (build production bundle, deploy to IC mainnet, and verify the live site).",
+        "id": "REQ-31",
+        "summary": "Diagnose and fix the blank/missing gallery images on the live site by ensuring the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos, and that those files are actually present under the frontend public assets directory used by the current code (paths like \"/assets/gallery/...jpeg\").",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/sections/GallerySection.tsx",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.22 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.35.08 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.23 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.16 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.18 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.25 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.35.09 PM.jpeg",
+          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM (1).jpeg"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/sections/GallerySection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-32",
+        "summary": "Harden the Gallery UI so that if any image fails to load, the UI shows a visible fallback state (e.g., a neutral placeholder block with short English text like \"Image unavailable\") instead of appearing blank, without breaking the existing hover overlay and modal behavior.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/sections/GallerySection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/sections/GallerySection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-33",
+        "summary": "Re-run the production build and redeploy after fixing the gallery asset paths so the updated gallery is live and the photos are visible in production.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/DEPLOYMENT.md"
@@ -29,6 +60,7 @@
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/DEPLOYMENT.md",
+    "frontend/src/components/sections/GallerySection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

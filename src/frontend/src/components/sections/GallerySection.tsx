@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { X } from 'lucide-react';
+import { X, ImageOff } from 'lucide-react';
 
-type Category = 'All' | 'Broadloom' | 'Modular' | 'Hand-Tufted' | 'Natural Fibers';
+type Category = 'All' | 'Hand-Tufted' | 'Traditional' | 'Contemporary' | 'Manufacturing';
 
 interface GalleryImage {
   src: string;
@@ -14,111 +14,76 @@ interface GalleryImage {
 export function GallerySection() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('All');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
-  const categories: Category[] = ['All', 'Broadloom', 'Modular', 'Hand-Tufted', 'Natural Fibers'];
+  const categories: Category[] = ['All', 'Hand-Tufted', 'Traditional', 'Contemporary', 'Manufacturing'];
 
   const galleryImages: GalleryImage[] = [
     {
-      src: '/assets/generated/carpet-texture-01.dim_1200x1200.png',
-      alt: 'Geometric weave pattern carpet',
-      title: 'Geometric Weave',
-      category: 'Broadloom',
-    },
-    {
-      src: '/assets/generated/carpet-texture-02.dim_1200x1200.png',
-      alt: 'Modern stripe pattern carpet',
-      title: 'Modern Stripe',
-      category: 'Modular',
-    },
-    {
-      src: '/assets/generated/carpet-texture-03.dim_1200x1200.png',
-      alt: 'Subtle organic pattern carpet',
-      title: 'Organic Pattern',
+      src: '/assets/gallery/WhatsApp Image 2026-02-10 at 1.25.31 AM.jpeg',
+      alt: 'Elegant hand-tufted carpet with intricate patterns',
+      title: 'Premium Hand-Tufted',
       category: 'Hand-Tufted',
     },
     {
-      src: '/assets/generated/carpet-texture-04.dim_1200x1200.png',
-      alt: 'Classic motif carpet',
-      title: 'Classic Motif',
-      category: 'Natural Fibers',
+      src: '/assets/gallery/WhatsApp Image 2026-02-10 at 1.25.32 AM (1).jpeg',
+      alt: 'Traditional carpet with classic design elements',
+      title: 'Classic Traditional',
+      category: 'Traditional',
     },
     {
-      src: '/assets/generated/carpet-texture-01.dim_1200x1200.png',
-      alt: 'Textured broadloom carpet',
-      title: 'Textured Elegance',
-      category: 'Broadloom',
+      src: '/assets/gallery/WhatsApp Image 2026-02-10 at 1.25.32 AM.jpeg',
+      alt: 'Contemporary carpet with modern aesthetic',
+      title: 'Modern Contemporary',
+      category: 'Contemporary',
     },
     {
-      src: '/assets/generated/carpet-texture-02.dim_1200x1200.png',
-      alt: 'Contemporary modular tile',
-      title: 'Contemporary Tile',
-      category: 'Modular',
+      src: '/assets/gallery/WhatsApp Image 2026-02-10 at 1.25.33 AM (1).jpeg',
+      alt: 'Manufacturing process showing carpet creation',
+      title: 'Craftsmanship in Action',
+      category: 'Manufacturing',
     },
     {
-      src: '/assets/generated/carpet-texture-03.dim_1200x1200.png',
-      alt: 'Artisan hand-tufted design',
-      title: 'Artisan Design',
+      src: '/assets/gallery/WhatsApp Image 2026-02-10 at 1.25.33 AM.jpeg',
+      alt: 'Hand-tufted carpet showcasing artisan quality',
+      title: 'Artisan Hand-Tufted',
       category: 'Hand-Tufted',
     },
     {
-      src: '/assets/generated/carpet-texture-04.dim_1200x1200.png',
-      alt: 'Natural sisal texture',
-      title: 'Natural Sisal',
-      category: 'Natural Fibers',
+      src: '/assets/gallery/WhatsApp Image 2026-02-10 at 1.25.34 AM.jpeg',
+      alt: 'Traditional carpet with timeless patterns',
+      title: 'Heritage Traditional',
+      category: 'Traditional',
     },
     {
-      src: '/assets/generated/carpet-texture-01.dim_1200x1200.png',
-      alt: 'Luxury broadloom pattern',
-      title: 'Luxury Pattern',
-      category: 'Broadloom',
+      src: '/assets/WhatsApp Image 2026-02-08 at 5.39.22 PM.jpeg',
+      alt: 'Artisans hand-tufting large decorative carpet',
+      title: 'Hand-Tufting Process',
+      category: 'Manufacturing',
     },
     {
-      src: '/assets/generated/carpet-texture-02.dim_1200x1200.png',
-      alt: 'Modular carpet tile design',
-      title: 'Modular Design',
-      category: 'Modular',
+      src: '/assets/WhatsApp Image 2026-02-08 at 5.35.08 PM.jpeg',
+      alt: 'Elegant traditional carpet in luxury setting',
+      title: 'Luxury Living Room',
+      category: 'Traditional',
     },
     {
-      src: '/assets/generated/carpet-texture-03.dim_1200x1200.png',
-      alt: 'Custom hand-tufted piece',
-      title: 'Custom Piece',
+      src: '/assets/WhatsApp Image 2026-02-08 at 5.39.23 PM.jpeg',
+      alt: 'Hand-tufted carpet with gold and burgundy patterns',
+      title: 'Gold & Burgundy Elegance',
       category: 'Hand-Tufted',
-    },
-    {
-      src: '/assets/generated/carpet-texture-04.dim_1200x1200.png',
-      alt: 'Jute blend carpet',
-      title: 'Jute Blend',
-      category: 'Natural Fibers',
-    },
-    {
-      src: '/assets/generated/carpet-texture-01.dim_1200x1200.png',
-      alt: 'Plush broadloom carpet',
-      title: 'Plush Comfort',
-      category: 'Broadloom',
-    },
-    {
-      src: '/assets/generated/carpet-texture-02.dim_1200x1200.png',
-      alt: 'Geometric modular tiles',
-      title: 'Geometric Tiles',
-      category: 'Modular',
-    },
-    {
-      src: '/assets/generated/carpet-texture-03.dim_1200x1200.png',
-      alt: 'Bespoke hand-tufted rug',
-      title: 'Bespoke Rug',
-      category: 'Hand-Tufted',
-    },
-    {
-      src: '/assets/generated/carpet-texture-04.dim_1200x1200.png',
-      alt: 'Wool blend natural fiber',
-      title: 'Wool Blend',
-      category: 'Natural Fibers',
     },
   ];
 
   const filteredImages = selectedCategory === 'All' 
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
+
+  const handleImageError = (src: string) => {
+    setImageErrors(prev => new Set(prev).add(src));
+  };
+
+  const isImageError = (src: string) => imageErrors.has(src);
 
   return (
     <section id="gallery" className="py-20 bg-secondary/10">
@@ -155,40 +120,62 @@ export function GallerySection() {
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <div
-                  className="group relative aspect-[4/5] overflow-hidden rounded-lg cursor-pointer"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-lg cursor-pointer bg-muted"
                   onClick={() => setSelectedImage(image.src)}
                 >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-background/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <p className="text-white font-semibold text-sm">{image.title}</p>
-                      <p className="text-white/80 text-xs">{image.category}</p>
+                  {isImageError(image.src) ? (
+                    <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground">
+                      <ImageOff size={32} className="mb-2" />
+                      <p className="text-xs text-center px-2">Image unavailable</p>
                     </div>
-                  </div>
+                  ) : (
+                    <>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={() => handleImageError(image.src)}
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-background/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-3">
+                          <p className="text-white font-semibold text-sm">{image.title}</p>
+                          <p className="text-white/80 text-xs">{image.category}</p>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </DialogTrigger>
               <DialogContent className="max-w-4xl w-full p-0 overflow-hidden">
                 <div className="relative">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-auto"
-                  />
-                  <button
-                    onClick={() => setSelectedImage(null)}
-                    className="absolute top-4 right-4 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
-                    aria-label="Close"
-                  >
-                    <X size={20} />
-                  </button>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/95 to-transparent">
-                    <h3 className="text-xl font-bold mb-1">{image.title}</h3>
-                    <p className="text-sm text-muted-foreground">{image.category}</p>
-                  </div>
+                  {isImageError(image.src) ? (
+                    <div className="w-full h-96 flex flex-col items-center justify-center bg-muted text-muted-foreground">
+                      <ImageOff size={64} className="mb-4" />
+                      <p className="text-lg">Image unavailable</p>
+                      <p className="text-sm mt-2">{image.title}</p>
+                    </div>
+                  ) : (
+                    <>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-auto"
+                        onError={() => handleImageError(image.src)}
+                      />
+                      <button
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute top-4 right-4 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
+                        aria-label="Close"
+                      >
+                        <X size={20} />
+                      </button>
+                      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/95 to-transparent">
+                        <h3 className="text-xl font-bold mb-1">{image.title}</h3>
+                        <p className="text-sm text-muted-foreground">{image.category}</p>
+                      </div>
+                    </>
+                  )}
                 </div>
               </DialogContent>
             </Dialog>

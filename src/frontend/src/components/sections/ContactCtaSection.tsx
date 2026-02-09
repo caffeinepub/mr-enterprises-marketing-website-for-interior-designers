@@ -1,4 +1,4 @@
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, MapPin, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CONTACT } from '@/config/contact';
@@ -17,7 +17,7 @@ export function ContactCtaSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
             <Card className="hover:shadow-soft transition-all duration-300">
               <CardContent className="pt-5 pb-5">
                 <div className="flex items-start space-x-3">
@@ -55,6 +55,27 @@ export function ContactCtaSection() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="hover:shadow-soft transition-all duration-300">
+              <CardContent className="pt-5 pb-5">
+                <div className="flex items-start space-x-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1 text-sm">Visit Us</h3>
+                    <a
+                      href={CONTACT.location.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {CONTACT.location.display}
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="text-center">
@@ -67,6 +88,17 @@ export function ContactCtaSection() {
               <Button size="lg" variant="outline" asChild>
                 <a href={`tel:${CONTACT.phone.tel}`}>
                   Call Now
+                </a>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <a
+                  href={CONTACT.location.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <Navigation size={18} />
+                  Directions
                 </a>
               </Button>
             </div>

@@ -1,56 +1,77 @@
 {
   "kind": "build_request",
-  "title": "Publish the current MR Enterprises draft site to the live Internet Computer environment",
-  "priority": "normal",
+  "title": "Fix missing gallery images by correcting asset paths and redeploying",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-22",
-      "text": "Publish the current draft version of the MR Enterprises marketing website to the live/public Internet Computer environment by following the documented deployment steps in frontend/DEPLOYMENT.md (build production bundle, deploy to IC mainnet, and verify the live site).",
+      "id": "REQ-31",
+      "text": "Diagnose and fix the blank/missing gallery images on the live site by ensuring the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos, and that those files are actually present under the frontend public assets directory used by the current code (paths like \"/assets/gallery/...jpeg\").",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-6",
+          "msg-8"
         ],
         "quotes": [
-          "yes"
+          "why pictures are not visible ?",
+          "yes please do"
         ]
       },
       "acceptanceCriteria": [
-        "Run the production build step successfully (npm run build) and confirm a dist/ output is produced.",
-        "Deploy the frontend canister to IC mainnet successfully (dfx deploy --network ic) with no deployment errors.",
-        "On the live canister URL, confirm the site loads without requiring authentication or preview access.",
-        "On the live site, confirm all primary sections render without errors: Header, Hero, Gallery, Collections, Benefits, Contact, Footer.",
-        "On the live site, verify navigation links smooth-scroll to the correct sections (Gallery, Collections, Contact).",
-        "On the live site, verify all images render correctly (hero background, gallery images, logo assets).",
-        "On the live site, verify contact details match the configured values (phone and email) and related links work (tel: and mailto:).",
-        "On the live site, verify mobile responsiveness, including the mobile menu behavior.",
-        "On the live site, verify both light and dark themes render correctly.",
-        "On the live site, verify gallery filtering and image modal/lightbox behavior work as expected.",
-        "On the live site, verify all CTAs are clickable and functional."
+        "All 9 gallery thumbnails render (no broken/blank images) on the deployed site.",
+        "Clicking any gallery item opens the modal with the same image rendered at full size.",
+        "No gallery image URLs return 404s in the browser Network tab.",
+        "The Gallery section continues to show only the 9 uploaded JPEG photos (no older generated texture images appear)."
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "text": "Harden the Gallery UI so that if any image fails to load, the UI shows a visible fallback state (e.g., a neutral placeholder block with short English text like \"Image unavailable\") instead of appearing blank, without breaking the existing hover overlay and modal behavior.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "why pictures are not visible ?"
+        ]
+      },
+      "acceptanceCriteria": [
+        "If an image URL is invalid, the grid cell renders a clear fallback placeholder instead of an empty/blank area.",
+        "Valid images still render normally with the existing hover overlay and click-to-enlarge dialog behavior unchanged."
+      ]
+    },
+    {
+      "id": "REQ-33",
+      "text": "Re-run the production build and redeploy after fixing the gallery asset paths so the updated gallery is live and the photos are visible in production.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6",
+          "msg-8"
+        ],
+        "quotes": [
+          "Most likely the new photos were uploaded but not actually referenced by the gallery code, or the file paths don’t match what the site expects.",
+          "yes please do"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new production deployment completes successfully.",
+        "After deployment, the live site shows the 9 photos in the Gallery section with no missing images."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any frontend or backend functionality beyond what is required to complete deployment; this change is a publish/deploy action.",
-    "Follow the deployment process and verification checklist documented in frontend/DEPLOYMENT.md."
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Keep all user-facing text in English.",
+    "Do not introduce new backend services; backend remains a single Motoko actor."
   ],
   "nonGoals": [
-    "Adding new site sections or changing existing page content/copy.",
-    "Changing branding, images, theme, layout, or SEO metadata as part of this publish step.",
-    "Adding any new backend functionality; the backend canister should remain unchanged unless deployment requires it."
+    "Do not change the gallery layout (grid density/aspect ratio), categories, or modal design beyond what is necessary to fix visibility and add a fallback.",
+    "Do not add or generate new gallery images; only fix referencing/serving of the existing uploaded JPEG photos."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }
