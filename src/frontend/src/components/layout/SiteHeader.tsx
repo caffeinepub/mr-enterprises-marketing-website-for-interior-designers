@@ -42,7 +42,7 @@ export function SiteHeader() {
             <img
               src={getPublicAssetUrl('MR icon-1.png')}
               alt="MR Enterprises"
-              className="h-12 w-auto object-contain"
+              className="h-10 w-auto object-contain block mx-auto"
             />
           </a>
 

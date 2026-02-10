@@ -1,48 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Swap site logo and favicon to uploaded MR icon-1.png",
+  "title": "Resize and center the header logo image",
   "requirements": [
     {
       "id": "REQ-4",
-      "summary": "Add MR icon-1.png to public assets and use it as the logo in the site header and footer.",
+      "summary": "Make the header logo image slightly smaller and visually centered by adjusting only the logo <img> Tailwind classes in SiteHeader.",
       "acceptanceCriteria": [
-        "The file MR icon-1.png is present in the frontend public assets directory (served under /assets/...).",
-        "SiteHeader renders MR icon-1.png as the logo image and no longer references the previous logo filename.",
-        "SiteFooter renders MR icon-1.png as the logo image and no longer references the previous logo filename.",
-        "Logo images render without 404s in both local dev and production build (verify via browser Network tab)."
+        "In `frontend/src/components/layout/SiteHeader.tsx`, the logo `<img>` height is reduced from its current size (currently `h-12`) to a smaller size.",
+        "The logo `<img>` is horizontally centered using only `<img>`-level styling (e.g., `block` + `mx-auto` or equivalent), without changing the surrounding header structure.",
+        "No other header elements (nav, buttons, containers, or the `<a>` wrapper) are modified."
       ],
       "file_operations": [
-        {
-          "path": "frontend/public/assets/MR icon-1.png",
-          "operation": "create",
-          "description": "Add the uploaded image file to the public static assets directory so it is served under /assets/ and can be referenced by UI components."
-        },
         {
           "path": "frontend/src/components/layout/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Replace the current logo asset reference with getPublicAssetUrl('MR icon-1.png') so the header uses the uploaded MR icon as the brand logo. Ensure the previous logo filename is no longer referenced."
-        },
-        {
-          "path": "frontend/src/components/layout/SiteFooter.tsx",
-          "operation": "modify",
-          "description": "Replace the current logo asset reference with getPublicAssetUrl('MR icon-1.png') so the footer uses the uploaded MR icon as the brand logo. Ensure the previous logo filename is no longer referenced."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Update favicon links to reference MR icon-1.png with correct URL encoding.",
-      "acceptanceCriteria": [
-        "frontend/index.html favicon links reference MR icon-1.png under /assets/ (with correct URL encoding).",
-        "After a hard refresh, the browser tab icon uses MR icon-1.png.",
-        "No favicon-related 404s occur in the browser Network tab."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Update favicon link href values to use the uploaded asset under /assets/ with proper URL encoding for spaces (e.g., MR%20icon-1.png), replacing the current favicon filename references."
+          "description": "Update ONLY the logo `<img>` element at the specified XPath by adjusting its Tailwind `className`: reduce height from `h-12` to a smaller value (e.g., `h-10`) and add `<img>`-level centering classes (e.g., `block` and `mx-auto`, or equivalent) without changing the surrounding `<a>` or any other header/layout elements."
         }
       ]
     }

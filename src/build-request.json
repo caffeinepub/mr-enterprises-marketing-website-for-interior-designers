@@ -1,52 +1,36 @@
 {
   "kind": "build_request",
-  "title": "Use uploaded MR icon as site logo and favicon",
+  "title": "Resize and center the header logo image",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-4",
-      "text": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
+      "text": "Update the header logo image element at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]` (implemented in `frontend/src/components/layout/SiteHeader.tsx`) to be slightly smaller and visually centered by adjusting only the `<img>` element’s Tailwind classes (do not modify the parent `<a>` or other header layout elements).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-3"
         ],
         "quotes": [
-          "use this as the logo or icon"
+          "make it a bit smaller and move it in center"
         ]
       },
       "acceptanceCriteria": [
-        "The file MR icon-1.png is present in the frontend public assets directory (served under /assets/...).",
-        "SiteHeader renders MR icon-1.png as the logo image and no longer references the previous logo filename.",
-        "SiteFooter renders MR icon-1.png as the logo image and no longer references the previous logo filename.",
-        "Logo images render without 404s in both local dev and production build (verify via browser Network tab)."
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "use this as the logo or icon"
-        ]
-      },
-      "acceptanceCriteria": [
-        "frontend/index.html favicon links reference MR icon-1.png under /assets/ (with correct URL encoding).",
-        "After a hard refresh, the browser tab icon uses MR icon-1.png.",
-        "No favicon-related 404s occur in the browser Network tab."
+        "In `frontend/src/components/layout/SiteHeader.tsx`, the logo `<img>` height is reduced from its current size (currently `h-12`) to a smaller size.",
+        "The logo `<img>` is horizontally centered using only `<img>`-level styling (e.g., `block` + `mx-auto` or equivalent), without changing the surrounding header structure.",
+        "No other header elements (nav, buttons, containers, or the `<a>` wrapper) are modified."
       ]
     }
   ],
   "constraints": [
-    "Do not edit any files under frontend/src/components/ui or any other immutablePaths listed in SYSTEM_CONTEXT."
+    "Apply changes ONLY to the selected element: the header logo `<img>` at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]`.",
+    "Do not edit any files under `frontend/src/components/ui` or any other immutable paths.",
+    "Keep the backend unchanged."
   ],
   "nonGoals": [
-    "Creating a new brand identity, redesigning the site theme, or changing layout beyond swapping the logo/icon asset.",
-    "Backend changes (no Motoko changes needed for this request)."
+    "Redesigning the header layout or repositioning navigation/menu elements.",
+    "Changing the logo image file or generating new image assets.",
+    "Adding new routes, sections, or backend functionality."
   ],
   "imageRequirements": {
     "required": [],

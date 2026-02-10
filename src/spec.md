@@ -1,12 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the site’s current logo and favicon with the uploaded **MR icon-1.png** image.
+**Goal:** Make the header logo image slightly smaller and visually centered using only the logo `<img>` element’s Tailwind classes.
 
 **Planned changes:**
-- Add **MR icon-1.png** to the frontend public static assets so it’s served under **/assets/**.
-- Update the site header to render **MR icon-1.png** as the primary logo (replacing the previous logo asset reference).
-- Update the site footer to render **MR icon-1.png** as the logo (replacing the previous logo asset reference).
-- Update favicon configuration in **frontend/index.html** to reference **MR icon-1.png** under **/assets/** (with correct URL encoding if needed).
+- In `frontend/src/components/layout/SiteHeader.tsx`, reduce the header logo `<img>` height from `h-12` to a smaller Tailwind height class.
+- Update the header logo `<img>` Tailwind classes to center it horizontally (e.g., `block` + `mx-auto`), without changing the surrounding `<a>` or any other header layout elements.
 
-**User-visible outcome:** The site header, footer, and browser tab favicon display the MR icon, with no missing-image (404) errors.
+**User-visible outcome:** The header logo appears a bit smaller and centered in the header without any other header layout changes.

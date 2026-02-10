@@ -1,38 +1,24 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-10T16:24:46.115Z",
+  "generatedAt": "2026-02-10T16:46:56.564Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
         "id": "REQ-4",
-        "summary": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
+        "summary": "Update the header logo image element at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]` (implemented in `frontend/src/components/layout/SiteHeader.tsx`) to be slightly smaller and visually centered by adjusting only the `<img>` element’s Tailwind classes (do not modify the parent `<a>` or other header layout elements).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/MR icon-1.png",
-          "frontend/src/components/layout/SiteHeader.tsx",
-          "frontend/src/components/layout/SiteFooter.tsx"
+          "frontend/src/components/layout/SiteHeader.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/layout/SiteHeader.tsx",
-          "frontend/src/components/layout/SiteFooter.tsx"
-        ]
-      },
-      {
-        "id": "REQ-5",
-        "summary": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/index.html"
-        ],
-        "matchedFiles": [
-          "frontend/index.html"
+          "frontend/src/components/layout/SiteHeader.tsx"
         ]
       }
     ]
@@ -42,8 +28,6 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/index.html",
-    "frontend/src/components/layout/SiteFooter.tsx",
     "frontend/src/components/layout/SiteHeader.tsx",
     "project_state.json",
     "scratch/component-selection.json",

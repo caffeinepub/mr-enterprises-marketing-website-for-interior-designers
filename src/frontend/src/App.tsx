@@ -1,5 +1,4 @@
 import { SiteHeader } from './components/layout/SiteHeader';
-import { SiteFooter } from './components/layout/SiteFooter';
 import { HeroSection } from './components/sections/HeroSection';
 import { GallerySection } from './components/sections/GallerySection';
 import { CollectionsSection } from './components/sections/CollectionsSection';
@@ -17,7 +16,6 @@ function App() {
         <BenefitsSection />
         <ContactCtaSection />
       </main>
-      <SiteFooter />
     </div>
   );
 }

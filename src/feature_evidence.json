@@ -2,10 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-the-uploaded-image-file-mr-icon-1-png-to-the-frontend-public-static-assets-and-use-it-as-the-primary-brand-logo-in-the-site-header-and-footer-replacing-the-current-logo-asset-reference",
-      "featureTitle": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
+      "featureId": "feature-update-the-header-logo-image-element-at-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-a-1-img-1-implemented-in-frontend-src-components-layout-siteheader-tsx-to-be-slightly-smaller-and-visually-centered-by-adjusting-only-the-img-element-s-tailwind-classes-do-not-modify-the-parent-a-or-other-header-layout-elements",
+      "featureTitle": "Update the header logo image element at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]` (implemented in `frontend/src/components/layout/SiteHeader.tsx`) to be slightly smaller and visually centered by adjusting only the `<img>` element’s Tailwind classes (do not modify the parent `<a>` or other header layout elements).",
       "files": [
-        "frontend/src/components/layout/SiteFooter.tsx",
         "frontend/src/components/layout/SiteHeader.tsx"
       ],
       "components": [
@@ -17,24 +16,6 @@
       ],
       "testIds": [
         "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-site-favicon-configuration-to-use-the-uploaded-image-file-mr-icon-1-png-instead-of-the-current-favicon-asset-ensuring-the-href-is-correctly-url-encoded-where-necessary",
-      "featureTitle": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
-      "files": [
-        "frontend/index.html"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
       ],
       "confidence": "high"
     }
