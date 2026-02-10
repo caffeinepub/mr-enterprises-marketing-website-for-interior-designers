@@ -1,10 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Benefits section so a specific card title reads “Sustainable” and the benefit descriptions use justified alignment, without impacting any other page content.
+**Goal:** Adjust the mobile layout of the Benefits section so its typography, spacing, and 2-column benefit-card placement match the provided reference screenshot (image-14.png).
 
 **Planned changes:**
-- In the Benefits section (only within `/html/body/div/div/main/section[4]/div[1]`), change the benefit card title text from “Responsible Materials” to “Sustainable”.
-- In the same Benefits section scope, change the benefit description/subtext paragraphs to `text-align: justify` on mobile and desktop while keeping icons and titles centered.
+- Update `frontend/src/components/sections/BenefitsSection.tsx` mobile styles to match the reference for section padding, heading/intro text sizing, and vertical spacing.
+- Implement/adjust the mobile benefit-card grid to a 2x2 layout with consistent gaps and centered alignment, matching icon/title/description positioning shown in the screenshot.
+- Preserve existing responsive behavior at md+ breakpoints (2 columns at md, 4 columns at lg) without visual regressions.
 
-**User-visible outcome:** On the Benefits section, the card previously titled “Responsible Materials” displays “Sustainable”, and the card descriptions appear justified while the icons and titles remain centered.
+**User-visible outcome:** On small mobile screens (e.g., ~375px wide), the Benefits section looks like the provided screenshot, with properly scaled typography, clean spacing, and a centered 2x2 benefits grid; larger breakpoints continue to render as before.

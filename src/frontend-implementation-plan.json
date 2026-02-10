@@ -1,36 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Benefits section copy update + justified benefit descriptions",
+  "title": "Benefits section mobile layout alignment to reference screenshot",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Rename the specified Benefits card title from \"Responsible Materials\" to \"Sustainable\" without changing any other page copy.",
+      "summary": "Adjust Benefits section mobile typography, spacing, and 2-column benefit-card layout to match image-14.png while preserving md+ grid behavior.",
       "acceptanceCriteria": [
-        "The benefits card that previously displayed the title \"Responsible Materials\" now displays \"Sustainable\".",
-        "No other section titles or copy elsewhere on the page are changed."
+        "On a small mobile viewport (e.g., 375px width), the Benefits section visually matches image-14.png for: (1) section heading and intro paragraph sizing and vertical spacing, (2) a 2x2 benefit grid with consistent gaps and centered alignment, (3) icon container size/shape and spacing above titles, (4) readable text sizes with no overflow or awkward wrapping.",
+        "On md+ breakpoints, the existing responsive intent is preserved (2 columns at md, 4 columns at lg) without regressions.",
+        "No changes are made to backend code."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/sections/BenefitsSection.tsx",
           "operation": "modify",
-          "description": "Update the Benefits data so the card title text changes from \"Responsible Materials\" to \"Sustainable\" (scoped only to the Benefits section rendering under the container element referenced by /html/body/div/div/main/section[4]/div[1])."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Render only the Benefits card description/subtext paragraphs with justified text alignment while keeping icons and titles centered.",
-      "acceptanceCriteria": [
-        "Benefit description text is rendered with CSS text alignment set to justify on mobile and desktop.",
-        "Icons and titles remain visually centered as they are now; only the description/subtext alignment changes.",
-        "No other paragraph text in other sections is affected."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/sections/BenefitsSection.tsx",
-          "operation": "modify",
-          "description": "Adjust the Benefits card markup/classes so the card container continues centering the icon and title, but the description <p> uses justified text alignment (e.g., apply a justify utility only to the description element and/or move the centering utility off the wrapper). Ensure the change is limited to the Benefits section subtree under /html/body/div/div/main/section[4]/div[1] and does not affect other sections' paragraphs."
+          "description": "Update Tailwind classes for mobile-first sizing/placement to match image-14.png: refine section padding, header block max-width and spacing, mobile heading/paragraph typography scale and leading, and benefit grid spacing (separate row/column gaps as needed). Ensure the mobile grid remains 2 columns with centered cards, and preserve existing md:grid-cols-2 and lg:grid-cols-4 behavior. Adjust benefit card layout for icon container size/shape (rounded square), icon sizing, and vertical spacing above titles; add constraints (e.g., per-card max-width) to prevent awkward wrapping/overflow on 375px."
         }
       ]
     }

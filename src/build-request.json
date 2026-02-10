@@ -1,54 +1,47 @@
 {
   "kind": "build_request",
-  "title": "Update Benefits card label and justify benefit descriptions",
+  "title": "Match Benefits section mobile size and placement to provided screenshot",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "In the Benefits section, change the benefit card title text from \"Responsible Materials\" to \"Sustainable\" (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
+      "text": "Update the mobile layout of the Benefits section (frontend/src/components/sections/BenefitsSection.tsx) so its sizing and element placement match the provided reference screenshot (image-14.png). This includes mobile typography scale, spacing (section padding, header block spacing, inter-card spacing), and benefit-card layout (2-column grid on mobile with icon, title, and description aligned/positioned as shown).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-4"
         ],
         "quotes": [
-          "change responsible materials to Sustainable"
+          "this is the size and placement i need for mobile view."
         ]
       },
       "acceptanceCriteria": [
-        "The benefits card that previously displayed the title \"Responsible Materials\" now displays \"Sustainable\".",
-        "No other section titles or copy elsewhere on the page are changed."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Update the Benefits card subtext (the benefit description paragraphs) to use justified alignment instead of center alignment (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-3"
-        ],
-        "quotes": [
-          "Make the subtext alignment justified, right now it is center aligned."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Benefit description text is rendered with CSS text alignment set to justify on mobile and desktop.",
-        "Icons and titles remain visually centered as they are now; only the description/subtext alignment changes.",
-        "No other paragraph text in other sections is affected."
+        "On a small mobile viewport (e.g., 375px width), the Benefits section visually matches image-14.png for: (1) section heading and intro paragraph sizing and vertical spacing, (2) a 2x2 benefit grid with consistent gaps and centered alignment, (3) icon container size/shape and spacing above titles, (4) readable text sizes with no overflow or awkward wrapping.",
+        "On md+ breakpoints, the existing responsive intent is preserved (2 columns at md, 4 columns at lg) without regressions.",
+        "No changes are made to backend code."
       ]
     }
   ],
   "constraints": [
-    "Apply changes only to the selected element (/html/body/div/div/main/section[4]/div[1]) in the Benefits section.",
-    "Do not modify any files under frontend/src/components/ui or any frontend immutablePaths."
+    "Edit only app-owned components; do not modify any files under frontend/src/components/ui or other immutable paths.",
+    "Keep all user-facing text in English."
   ],
   "nonGoals": [
-    "No changes to backend logic (Motoko actor remains unchanged).",
-    "No layout/spacing redesign beyond the requested text changes and subtext alignment update."
+    "Adding new sections or changing the Benefits section marketing copy.",
+    "Backend changes, data persistence, or authentication changes."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

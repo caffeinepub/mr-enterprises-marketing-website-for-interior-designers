@@ -1,24 +1,16 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
+  "summary": "Project to fine-tune mobile view layout (size and placement) for the live update.",
   "architectural_notes": [],
   "known_issues": [],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-in-the-benefits-section-change-the-benefit-card-title-text-from-responsible-materials-to-sustainable-only-within-the-selected-element-at-html-body-div-div-main-section-4-div-1",
-      "title": "In the Benefits section, change the benefit card title text from \"Responsible Materials\" to \"Sustainable\" (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
+      "id": "feature-update-the-mobile-layout-of-the-benefits-section-frontend-src-components-sections-benefitssection-tsx-so-its-sizing-and-element-placement-match-the-provided-reference-screenshot-image-14-png-this-includes-mobile-typography-scale-spacing-section-padding-header-block-spacing-inter-card-spacing-and-benefit-card-layout-2-column-grid-on-mobile-with-icon-title-and-description-aligned-positioned-as-shown",
+      "title": "Update the mobile layout of the Benefits section (frontend/src/components/sections/BenefitsSection.tsx) so its sizing and element placement match the provided reference screenshot (image-14.png). This includes mobile typography scale, spacing (section padding, header block spacing, inter-card spacing), and benefit-card layout (2-column grid on mobile with icon, title, and description aligned/positioned as shown).",
       "reqIds": [
         "REQ-1"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-benefits-card-subtext-the-benefit-description-paragraphs-to-use-justified-alignment-instead-of-center-alignment-only-within-the-selected-element-at-html-body-div-div-main-section-4-div-1",
-      "title": "Update the Benefits card subtext (the benefit description paragraphs) to use justified alignment instead of center alignment (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
-      "reqIds": [
-        "REQ-2"
       ],
       "version": 1
     }
@@ -26,18 +18,12 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Change label/text from \"responsible materials\" to \"Sustainable\"",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Update subtext alignment to justified (currently center aligned)",
+      "summary": "Adjust mobile view layout to match required size and placement",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Update Benefits card label and justify benefit descriptions",
+  "projectName": "Match Benefits section mobile size and placement to provided screenshot",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

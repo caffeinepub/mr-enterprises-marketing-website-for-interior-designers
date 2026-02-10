@@ -19,7 +19,7 @@ export function BenefitsSection() {
     },
     {
       icon: Leaf,
-      title: 'Sustainable',
+      title: 'Responsible Materials',
       description: 'Thoughtfully sourced, future-ready. Eco-conscious materials and low-VOC options aligned with modern sustainability standards.',
     },
   ];
@@ -38,12 +38,12 @@ export function BenefitsSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 md:gap-6 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
-            <div key={index} className="group max-w-[180px] mx-auto">
+            <div key={index} className="group text-center max-w-[180px] mx-auto">
               <div className="w-14 h-14 md:w-12 md:h-12 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4 md:mb-3 group-hover:bg-accent/20 transition-colors">
                 <benefit.icon className="text-accent" size={24} strokeWidth={1.5} />
               </div>
-              <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-1 leading-snug text-center">{benefit.title}</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed text-justify">{benefit.description}</p>
+              <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-1 leading-snug">{benefit.title}</h3>
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>
