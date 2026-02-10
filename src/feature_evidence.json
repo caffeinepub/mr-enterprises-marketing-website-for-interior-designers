@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-diagnose-and-fix-the-blank-missing-gallery-images-on-the-live-site-by-ensuring-the-gallery-section-references-the-exact-deployable-static-asset-paths-for-the-9-uploaded-jpeg-photos-and-that-those-files-are-actually-present-under-the-frontend-public-assets-directory-used-by-the-current-code-paths-like-assets-gallery-jpeg",
-      "featureTitle": "Diagnose and fix the blank/missing gallery images on the live site by ensuring the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos, and that those files are actually present under the frontend public assets directory used by the current code (paths like \"/assets/gallery/...jpeg\").",
+      "featureId": "feature-add-the-uploaded-image-file-mr-icon-1-png-to-the-frontend-public-static-assets-and-use-it-as-the-primary-brand-logo-in-the-site-header-and-footer-replacing-the-current-logo-asset-reference",
+      "featureTitle": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
       "files": [
-        "frontend/src/components/sections/GallerySection.tsx"
+        "frontend/src/components/layout/SiteFooter.tsx",
+        "frontend/src/components/layout/SiteHeader.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,15 +16,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-31"
+        "REQ-4"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-harden-the-gallery-ui-so-that-if-any-image-fails-to-load-the-ui-shows-a-visible-fallback-state-e-g-a-neutral-placeholder-block-with-short-english-text-like-image-unavailable-instead-of-appearing-blank-without-breaking-the-existing-hover-overlay-and-modal-behavior",
-      "featureTitle": "Harden the Gallery UI so that if any image fails to load, the UI shows a visible fallback state (e.g., a neutral placeholder block with short English text like \"Image unavailable\") instead of appearing blank, without breaking the existing hover overlay and modal behavior.",
+      "featureId": "feature-update-the-site-favicon-configuration-to-use-the-uploaded-image-file-mr-icon-1-png-instead-of-the-current-favicon-asset-ensuring-the-href-is-correctly-url-encoded-where-necessary",
+      "featureTitle": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
       "files": [
-        "frontend/src/components/sections/GallerySection.tsx"
+        "frontend/index.html"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -33,25 +34,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-32"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-re-run-the-production-build-and-redeploy-after-fixing-the-gallery-asset-paths-so-the-updated-gallery-is-live-and-the-photos-are-visible-in-production",
-      "featureTitle": "Re-run the production build and redeploy after fixing the gallery asset paths so the updated gallery is live and the photos are visible in production.",
-      "files": [
-        "frontend/DEPLOYMENT.md"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-33"
+        "REQ-5"
       ],
       "confidence": "high"
     }

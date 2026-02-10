@@ -1,77 +1,65 @@
 {
   "kind": "build_request",
-  "title": "Fix missing gallery images by correcting asset paths and redeploying",
-  "priority": "high",
+  "title": "Use uploaded MR icon as site logo and favicon",
+  "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-31",
-      "text": "Diagnose and fix the blank/missing gallery images on the live site by ensuring the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos, and that those files are actually present under the frontend public assets directory used by the current code (paths like \"/assets/gallery/...jpeg\").",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6",
-          "msg-8"
-        ],
-        "quotes": [
-          "why pictures are not visible ?",
-          "yes please do"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All 9 gallery thumbnails render (no broken/blank images) on the deployed site.",
-        "Clicking any gallery item opens the modal with the same image rendered at full size.",
-        "No gallery image URLs return 404s in the browser Network tab.",
-        "The Gallery section continues to show only the 9 uploaded JPEG photos (no older generated texture images appear)."
-      ]
-    },
-    {
-      "id": "REQ-32",
-      "text": "Harden the Gallery UI so that if any image fails to load, the UI shows a visible fallback state (e.g., a neutral placeholder block with short English text like \"Image unavailable\") instead of appearing blank, without breaking the existing hover overlay and modal behavior.",
+      "id": "REQ-4",
+      "text": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "why pictures are not visible ?"
+          "use this as the logo or icon"
         ]
       },
       "acceptanceCriteria": [
-        "If an image URL is invalid, the grid cell renders a clear fallback placeholder instead of an empty/blank area.",
-        "Valid images still render normally with the existing hover overlay and click-to-enlarge dialog behavior unchanged."
+        "The file MR icon-1.png is present in the frontend public assets directory (served under /assets/...).",
+        "SiteHeader renders MR icon-1.png as the logo image and no longer references the previous logo filename.",
+        "SiteFooter renders MR icon-1.png as the logo image and no longer references the previous logo filename.",
+        "Logo images render without 404s in both local dev and production build (verify via browser Network tab)."
       ]
     },
     {
-      "id": "REQ-33",
-      "text": "Re-run the production build and redeploy after fixing the gallery asset paths so the updated gallery is live and the photos are visible in production.",
+      "id": "REQ-5",
+      "text": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6",
-          "msg-8"
+          "msg-6"
         ],
         "quotes": [
-          "Most likely the new photos were uploaded but not actually referenced by the gallery code, or the file paths don’t match what the site expects.",
-          "yes please do"
+          "use this as the logo or icon"
         ]
       },
       "acceptanceCriteria": [
-        "A new production deployment completes successfully.",
-        "After deployment, the live site shows the 9 photos in the Gallery section with no missing images."
+        "frontend/index.html favicon links reference MR icon-1.png under /assets/ (with correct URL encoding).",
+        "After a hard refresh, the browser tab icon uses MR icon-1.png.",
+        "No favicon-related 404s occur in the browser Network tab."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
-    "Keep all user-facing text in English.",
-    "Do not introduce new backend services; backend remains a single Motoko actor."
+    "Do not edit any files under frontend/src/components/ui or any other immutablePaths listed in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Do not change the gallery layout (grid density/aspect ratio), categories, or modal design beyond what is necessary to fix visibility and add a fallback.",
-    "Do not add or generate new gallery images; only fix referencing/serving of the existing uploaded JPEG photos."
+    "Creating a new brand identity, redesigning the site theme, or changing layout beyond swapping the logo/icon asset.",
+    "Backend changes (no Motoko changes needed for this request)."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

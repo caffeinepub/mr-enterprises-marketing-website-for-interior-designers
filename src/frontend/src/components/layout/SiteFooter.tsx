@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Navigation } from 'lucide-react';
 import { CONTACT } from '@/config/contact';
+import { getPublicAssetUrl } from '@/utils/publicAssetUrl';
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,9 @@ export function SiteFooter() {
           {/* Brand */}
           <div>
             <img
-              src="/assets/generated/mr-logo-mark.dim_256x256.png"
+              src={getPublicAssetUrl('MR icon-1.png')}
               alt="MR Enterprises"
-              className="h-12 w-auto mb-4"
+              className="h-12 w-auto object-contain mb-4"
             />
             <p className="text-sm text-muted-foreground max-w-xs">
               Premium carpet manufacturer specializing in custom solutions for interior designers.

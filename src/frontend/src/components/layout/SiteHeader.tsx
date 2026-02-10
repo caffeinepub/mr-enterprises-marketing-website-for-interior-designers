@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getPublicAssetUrl } from '@/utils/publicAssetUrl';
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,9 +40,9 @@ export function SiteHeader() {
           {/* Logo */}
           <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('#hero'); }} className="flex items-center space-x-3">
             <img
-              src="/assets/generated/mr-logo-mark.dim_256x256.png"
+              src={getPublicAssetUrl('MR icon-1.png')}
               alt="MR Enterprises"
-              className="h-12 w-auto"
+              className="h-12 w-auto object-contain"
             />
           </a>
 
@@ -55,7 +56,7 @@ export function SiteHeader() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                className="text-sm font-medium text-white hover:text-white/80 transition-colors"
               >
                 {link.label}
               </a>
@@ -70,7 +71,7 @@ export function SiteHeader() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -90,7 +91,7 @@ export function SiteHeader() {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
+                  className="text-sm font-medium text-white hover:text-white/80 transition-colors py-2"
                 >
                   {link.label}
                 </a>

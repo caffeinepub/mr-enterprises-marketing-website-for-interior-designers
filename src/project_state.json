@@ -1,267 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 33,
-  "summary": "Shift the marketing site to be a simpler, single informative page with a stronger emphasis on showcasing a gallery of work, plus minimal supporting information.",
+  "projectStateVersion": 3,
+  "summary": "New project",
   "architectural_notes": [],
-  "known_issues": [
-    "Build/deploy pipeline hit a configuration problem during the last build attempt; user requested to retry the update.",
-    "Deployed site shows blank/missing gallery images; likely due to gallery code not referencing the uploaded photo asset paths correctly."
-  ],
-  "isFixRequest": true,
+  "known_issues": [],
+  "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-create-a-single-page-marketing-website-that-clearly-presents-the-business-as-a-carpet-manufacturer-and-is-suitable-to-share-with-interior-designers",
-      "title": "Create a single-page marketing website that clearly presents the business as a carpet manufacturer and is suitable to share with interior designers.",
-      "reqIds": [
-        "REQ-1"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-core-homepage-sections-and-content-blocks-hero-about-capabilities-carpet-types-collections-benefits-for-design-projects-and-a-call-to-action-section-for-contacting-requesting-samples",
-      "title": "Add core homepage sections and content blocks: Hero, About/Capabilities, Carpet Types/Collections, Benefits for design projects, and a Call-to-Action section for contacting/requesting samples.",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-lightweight-gallery-portfolio-section-showcasing-carpet-visuals-patterns-textures-with-a-clean-grid-and-optional-modal-lightbox-viewing",
-      "title": "Create a lightweight gallery/portfolio section showcasing carpet visuals (patterns/textures) with a clean grid and optional modal/lightbox viewing.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-apply-one-coherent-visual-theme-suitable-for-a-premium-materials-manufacturing-brand-colors-typography-spacing-and-component-styling-and-use-it-consistently-across-the-site-avoid-blue-purple-as-the-primary-palette",
-      "title": "Apply one coherent visual theme suitable for a premium materials/manufacturing brand (colors, typography, spacing, and component styling) and use it consistently across the site (avoid blue/purple as the primary palette).",
+      "id": "feature-add-the-uploaded-image-file-mr-icon-1-png-to-the-frontend-public-static-assets-and-use-it-as-the-primary-brand-logo-in-the-site-header-and-footer-replacing-the-current-logo-asset-reference",
+      "title": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
       "reqIds": [
         "REQ-4"
       ],
       "version": 1
     },
     {
-      "id": "feature-add-basic-on-page-seo-and-shareability-metadata-title-description-and-social-preview-metadata-aligned-with-the-carpet-manufacturer-positioning",
-      "title": "Add basic on-page SEO and shareability metadata (title, description, and social preview metadata) aligned with the carpet manufacturer positioning.",
+      "id": "feature-update-the-site-favicon-configuration-to-use-the-uploaded-image-file-mr-icon-1-png-instead-of-the-current-favicon-asset-ensuring-the-href-is-correctly-url-encoded-where-necessary",
+      "title": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
       "reqIds": [
         "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-include-the-generated-static-images-as-frontend-assets-and-render-them-in-the-hero-and-gallery-collections-sections-served-from-frontend-public-assets-generated",
-      "title": "Include the generated static images as frontend assets and render them in the Hero and Gallery/Collections sections (served from frontend/public/assets/generated).",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-refactor-the-single-page-layout-to-be-primarily-a-portfolio-gallery-page-make-the-gallery-the-main-section-placed-immediately-after-the-hero-and-reduce-the-prominence-of-other-sections-so-the-page-reads-as-an-informative-showcase-rather-than-a-full-multi-section-marketing-site",
-      "title": "Refactor the single-page layout to be primarily a portfolio/gallery page: make the Gallery the main section (placed immediately after the Hero), and reduce the prominence of other sections so the page reads as an informative showcase rather than a full multi-section marketing site.",
-      "reqIds": [
-        "REQ-7"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-expand-the-gallery-section-to-feel-like-a-larger-portfolio-support-showing-more-than-the-current-4-items-with-a-denser-grid-layout-and-include-lightweight-structure-for-browsing-e-g-optional-category-filter-ui-and-or-grouped-headings-while-keeping-the-existing-click-to-enlarge-dialog-behavior",
-      "title": "Expand the Gallery section to feel like a larger portfolio: support showing more than the current 4 items with a denser grid layout, and include lightweight structure for browsing (e.g., optional category/filter UI and/or grouped headings) while keeping the existing click-to-enlarge dialog behavior.",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-navigation-and-calls-to-action-to-match-the-new-gallery-forward-informative-structure-adjust-header-navigation-links-and-hero-secondary-button-to-prioritize-scrolling-to-the-gallery-and-remove-or-demote-links-to-any-sections-that-were-removed-condensed",
-      "title": "Update navigation and calls-to-action to match the new gallery-forward informative structure: adjust header navigation links and Hero secondary button to prioritize scrolling to the Gallery and remove or demote links to any sections that were removed/condensed.",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-keep-the-page-informative-with-minimal-supporting-information-rewrite-shorten-the-non-gallery-section-copy-including-the-contact-cta-to-be-concise-and-supportive-of-showcasing-work-while-keeping-all-user-facing-text-in-english",
-      "title": "Keep the page informative with minimal supporting information: rewrite/shorten the non-gallery section copy (including the contact CTA) to be concise and supportive of showcasing work, while keeping all user-facing text in English.",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-gallery-section-grid-items-to-use-a-taller-aspect-ratio-not-square-so-the-gallery-thumbnails-appear-taller-while-preserving-the-existing-hover-overlay-and-click-to-enlarge-dialog-behavior",
-      "title": "Update the Gallery section grid items to use a taller aspect ratio (not square) so the gallery thumbnails appear taller while preserving the existing hover overlay and click-to-enlarge dialog behavior.",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-remove-the-site-section-titled-your-manufacturing-partner-from-the-page-and-remove-any-header-footer-navigation-links-that-scroll-to-that-removed-section",
-      "title": "Remove the site section titled “Your Manufacturing Partner” from the page, and remove any header/footer navigation links that scroll to that removed section.",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-company-name-displayed-across-the-site-from-artisan-carpet-co-to-mr-enterprises-including-header-footer-brand-text-and-seo-metadata-where-the-site-name-is-shown",
-      "title": "Update the company name displayed across the site from “Artisan Carpet Co.” to “MR Enterprises”, including header/footer brand text and SEO metadata where the site name is shown.",
-      "reqIds": [
-        "REQ-13"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-hero-top-section-to-be-cleaner-and-more-minimal-and-change-the-main-hero-headline-text-to-exactly-mr-enterprises-carpet-manufacturer",
-      "title": "Update the Hero (top) section to be cleaner and more minimal, and change the main hero headline text to exactly: “MR Enterprises - Carpet Manufacturer”.",
-      "reqIds": [
-        "REQ-14"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-adjust-herosection-styling-so-the-top-section-reads-more-minimal-refine-typography-sizing-spacing-background-overlay-gradient-intensity-and-any-decorative-elements-e-g-scroll-indicator-to-achieve-a-cleaner-look-without-removing-the-hero-background-image",
-      "title": "Adjust HeroSection styling so the top section reads more minimal: refine typography sizing/spacing, background overlay/gradient intensity, and any decorative elements (e.g., scroll indicator) to achieve a cleaner look without removing the hero background image.",
-      "reqIds": [
-        "REQ-15"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-hero-banner-background-image-with-a-new-image-that-has-no-embedded-text-and-update-the-herosection-to-reference-the-new-generated-asset-from-frontend-public-assets-generated",
-      "title": "Replace the Hero (banner) background image with a new image that has no embedded text, and update the HeroSection to reference the new generated asset from frontend/public/assets/generated.",
-      "reqIds": [
-        "REQ-16"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-center-align-the-herosection-text-content-headline-subheadline-and-cta-buttons-so-the-entire-hero-content-block-is-visually-centered-across-responsive-breakpoints",
-      "title": "Center-align the HeroSection text content (headline, subheadline, and CTA buttons) so the entire hero content block is visually centered across responsive breakpoints.",
-      "reqIds": [
-        "REQ-17"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-site-s-displayed-contact-details-to-use-phone-91-9138199931-and-email-sahil13tanwar-gmail-com-anywhere-contact-info-is-shown-including-the-contact-cta-section-and-the-footer-contact-area-ensure-all-related-links-tel-and-mailto-use-the-updated-values",
-      "title": "Update the site’s displayed contact details to use phone \"+91 9138199931\" and email \"sahil13tanwar@gmail.com\" anywhere contact info is shown, including the Contact/CTA section and the footer contact area; ensure all related links (tel: and mailto:) use the updated values.",
-      "reqIds": [
-        "REQ-18"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-the-user-provided-logo-image-uploaded-as-mr-icon-png-to-the-frontend-static-assets-and-export-optimized-variants-for-web-use-in-the-site-ui-transparent-background-preserved-if-present-cropped-to-remove-excessive-whitespace-and-sized-appropriately-for-header-footer-and-favicon-use",
-      "title": "Add the user-provided logo image (uploaded as \"MR icon.png\") to the frontend static assets and export optimized variants for web use in the site UI (transparent background preserved if present, cropped to remove excessive whitespace, and sized appropriately for header/footer and favicon use).",
-      "reqIds": [
-        "REQ-19"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-current-brand-logo-rendering-in-the-site-header-and-footer-to-use-the-new-logo-asset-variant-s-ensuring-the-logo-displays-well-across-responsive-breakpoints-desktop-mobile-and-does-not-distort-the-header-layout-also-add-favicon-metadata-in-frontend-index-html-using-the-new-favicon-asset-s",
-      "title": "Replace the current brand logo rendering in the site header and footer to use the new logo asset variant(s), ensuring the logo displays well across responsive breakpoints (desktop + mobile) and does not distort the header layout; also add favicon metadata in frontend/index.html using the new favicon asset(s).",
-      "reqIds": [
-        "REQ-20"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-publish-the-current-draft-version-of-the-mr-enterprises-marketing-website-to-the-live-public-environment-so-it-is-accessible-via-the-live-url",
-      "title": "Publish the current draft version of the MR Enterprises marketing website to the live/public environment so it is accessible via the live URL.",
-      "reqIds": [
-        "REQ-21"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-publish-the-current-draft-version-of-the-mr-enterprises-marketing-website-to-the-live-public-internet-computer-environment-by-following-the-documented-deployment-steps-in-frontend-deployment-md-build-production-bundle-deploy-to-ic-mainnet-and-verify-the-live-site",
-      "title": "Publish the current draft version of the MR Enterprises marketing website to the live/public Internet Computer environment by following the documented deployment steps in frontend/DEPLOYMENT.md (build production bundle, deploy to IC mainnet, and verify the live site).",
-      "reqIds": [
-        "REQ-22"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-google-maps-link-for-the-business-location-that-opens-google-maps-in-a-new-tab-and-surface-it-anywhere-location-contact-info-is-displayed-at-minimum-contact-cta-section-and-the-footer-centralize-the-google-maps-url-in-the-existing-contact-config-so-it-is-reused-consistently-across-the-site",
-      "title": "Add a Google Maps link for the business location that opens Google Maps in a new tab, and surface it anywhere location/contact info is displayed (at minimum: Contact/CTA section and the footer). Centralize the Google Maps URL in the existing contact config so it is reused consistently across the site.",
-      "reqIds": [
-        "REQ-23"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-site-wide-location-contact-information-to-use-the-full-business-address-huda-sector-29-plot-no-551-part-2-panipat-haryana-anywhere-location-contact-info-is-displayed-and-ensure-the-google-maps-link-points-to-this-exact-address-by-updating-the-centralized-location-configuration-in-frontend-src-config-contact-ts",
-      "title": "Update the site-wide location/contact information to use the full business address \"HUDA Sector 29, Plot No 551, Part -2, Panipat, Haryana\" anywhere location/contact info is displayed, and ensure the Google Maps link points to this exact address by updating the centralized location configuration in frontend/src/config/contact.ts.",
-      "reqIds": [
-        "REQ-24"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-remove-the-built-with-using-caffeine-ai-attribution-section-from-the-site-footer-bottom-bar-including-the-outbound-link-and-related-utm-parameters-while-keeping-the-copyright-line-intact",
-      "title": "Remove the \"Built with ❤️ using caffeine.ai\" attribution section from the site footer bottom bar (including the outbound link and related UTM parameters), while keeping the copyright line intact.",
-      "reqIds": [
-        "REQ-25"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-visible-directions-button-that-opens-google-maps-directions-for-the-business-address-in-a-new-tab-using-the-centralized-location-configuration-so-the-url-is-reused-consistently-anywhere-it-is-shown-at-minimum-the-contact-cta-section-optionally-also-the-footer-contact-area-if-space-allows",
-      "title": "Add a visible \"Directions\" button that opens Google Maps directions for the business address in a new tab, using the centralized location configuration so the URL is reused consistently anywhere it is shown (at minimum: the Contact/CTA section; optionally also the footer contact area if space allows).",
-      "reqIds": [
-        "REQ-26"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-the-6-user-uploaded-jpeg-photos-to-the-frontend-static-assets-and-update-the-gallery-section-to-display-only-these-6-images-remove-all-current-gallery-items-that-reference-the-existing-generated-carpet-texture-images-while-keeping-the-existing-grid-layout-hover-overlay-category-filter-ui-and-click-to-enlarge-dialog-behavior-intact",
-      "title": "Add the 6 user-uploaded JPEG photos to the frontend static assets and update the Gallery section to display only these 6 images (remove all current gallery items that reference the existing generated carpet texture images), while keeping the existing grid layout, hover overlay, category filter UI, and click-to-enlarge dialog behavior intact.",
-      "reqIds": [
-        "REQ-27"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-the-9-newly-uploaded-jpeg-images-to-the-frontend-static-assets-under-the-existing-gallery-assets-folder-and-update-the-gallery-section-to-display-these-9-images-and-only-these-9-images-replacing-the-current-6-gallery-items-while-keeping-the-existing-grid-layout-taller-thumbnail-aspect-ratio-hover-overlay-category-filter-ui-and-click-to-enlarge-dialog-behavior-intact",
-      "title": "Add the 9 newly uploaded JPEG images to the frontend static assets under the existing gallery assets folder and update the Gallery section to display these 9 images (and only these 9 images), replacing the current 6 gallery items, while keeping the existing grid layout, taller thumbnail aspect ratio, hover overlay, category filter UI, and click-to-enlarge dialog behavior intact.",
-      "reqIds": [
-        "REQ-28"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-gallery-section-s-category-labels-and-per-image-metadata-title-alt-text-in-english-so-the-category-filter-remains-meaningful-for-the-9-newly-uploaded-images",
-      "title": "Update the Gallery section’s category labels and per-image metadata (title + alt text in English) so the category filter remains meaningful for the 9 newly uploaded images.",
-      "reqIds": [
-        "REQ-29"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-diagnose-and-fix-the-blank-missing-gallery-images-on-the-live-site-by-ensuring-the-gallery-section-references-the-exact-deployable-static-asset-paths-for-the-9-uploaded-jpeg-photos-and-that-those-files-are-actually-present-under-the-frontend-public-assets-directory-used-by-the-current-code-paths-like-assets-gallery-jpeg",
-      "title": "Diagnose and fix the blank/missing gallery images on the live site by ensuring the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos, and that those files are actually present under the frontend public assets directory used by the current code (paths like \"/assets/gallery/...jpeg\").",
-      "reqIds": [
-        "REQ-31"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-harden-the-gallery-ui-so-that-if-any-image-fails-to-load-the-ui-shows-a-visible-fallback-state-e-g-a-neutral-placeholder-block-with-short-english-text-like-image-unavailable-instead-of-appearing-blank-without-breaking-the-existing-hover-overlay-and-modal-behavior",
-      "title": "Harden the Gallery UI so that if any image fails to load, the UI shows a visible fallback state (e.g., a neutral placeholder block with short English text like \"Image unavailable\") instead of appearing blank, without breaking the existing hover overlay and modal behavior.",
-      "reqIds": [
-        "REQ-32"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-re-run-the-production-build-and-redeploy-after-fixing-the-gallery-asset-paths-so-the-updated-gallery-is-live-and-the-photos-are-visible-in-production",
-      "title": "Re-run the production build and redeploy after fixing the gallery asset paths so the updated gallery is live and the photos are visible in production.",
-      "reqIds": [
-        "REQ-33"
       ],
       "version": 1
     }
@@ -269,100 +26,13 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Build a shareable marketing website for a carpet manufacturer aimed at interior designers, showcasing different carpet types and their benefits for projects",
+      "summary": "Use the provided asset as the app/site logo or icon",
       "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Refocus the site into a simple informative single page with a heavier emphasis on a gallery of work (more gallery content, minimal supporting info).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Make the gallery images taller (use a taller aspect ratio instead of square) in the relevant section.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Remove the site section labeled “Your Manufacturing Partner”.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Update the company name displayed on the site to “MR Enterprises”.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-6",
-      "summary": "Make the top (hero) section cleaner and more minimal, and update its primary text to “MR Enterprises - Carpet Manufacturer”.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Update the hero/banner image (use an image without embedded text) and center-align the page/hero text content.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-8",
-      "summary": "Add the provided contact details (phone +91 9138199931 and email sahil13tanwar@gmail.com) to the site’s Contact/CTA section (and any relevant footer/contact areas).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Incorporate the provided logo into the marketing site (e.g., header/brand area and any other appropriate placements) and ensure it displays well across responsive breakpoints.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Publish/push the current draft of the MR Enterprises marketing website live so it is accessible via the live URL.",
-      "reqIds": [
-        "REQ-21"
-      ],
-      "status": "in_progress"
-    },
-    {
-      "id": "AR-11",
-      "summary": "Add a Google Maps link for the business location that directs users to Google Maps (e.g., from Contact/CTA and/or footer).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-12",
-      "summary": "Add the provided business address (HUDA Sector 29, Plot No 551, Part -2, Panipat, Haryana) anywhere location/contact info is displayed (e.g., Contact/CTA section and footer), and use it as the basis for the Google Maps link/location info.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-13",
-      "summary": "Add a \"Directions\" button that opens the business location directly in Google Maps (e.g., from the Contact/CTA section and/or footer).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-14",
-      "summary": "Replace the current gallery images with the newly provided photos (upload new photos into the gallery and remove the existing ones).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-17",
-      "summary": "Resolve the build/deploy configuration failure encountered in the last build attempt and re-run the build so the updated gallery is successfully built and deployable.",
-      "reqIds": [
-        "REQ-30"
-      ],
       "status": "pending"
     }
   ],
-  "projectName": "MR Enterprises marketing website (for interior designers)",
+  "gameProjectType": "none",
+  "projectName": "Use uploaded MR icon as site logo and favicon",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

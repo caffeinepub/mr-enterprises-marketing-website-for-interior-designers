@@ -1,41 +1,36 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T20:15:28.375Z",
-  "summary": "GallerySection updates add explicit JPEG asset paths and introduce client-side image error tracking, but the diff does not conclusively show that all 9 images reference the required deployable \"/assets/gallery/...jpeg\" paths or that the corresponding JPEG files are present in the frontend public assets directory. Deployment/redeploy completion cannot be verified from code diffs alone.",
+  "generatedAt": "2026-02-10T16:24:46.113Z",
+  "summary": "Header and footer logo references were updated to use `MR icon-1.png` via `getPublicAssetUrl(...)`, and `frontend/index.html` favicon links were updated to point to `/assets/MR%20icon-1.png`. However, the actual image file was not added to the public assets in the provided diff summary, so serving the logo/favicon without 404s is not fully ensured by these changes alone.",
   "missing_requirements": [
     {
-      "id": "REQ-31",
-      "requirement": "Ensure the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos (paths like \"/assets/gallery/...jpeg\") and that those files are present under the frontend public assets directory used by the current code.",
-      "reason": "Only 6 of the 9 images use the \"/assets/gallery/...jpeg\" prefix; 3 images use \"/assets/...jpeg\" instead. The diff also does not show any added/moved static JPEG files under the public assets directory, so file presence cannot be confirmed from the provided changes.",
+      "id": "REQ-4",
+      "requirement": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets directory (served under /assets/...).",
+      "reason": "The diff shows no added files, so there is no evidence that `MR icon-1.png` was placed into the frontend public assets directory.",
       "evidence": [
-        "frontend/src/components/sections/GallerySection.tsx"
-      ]
-    },
-    {
-      "id": "REQ-33",
-      "requirement": "Re-run the production build and redeploy so the updated gallery is live.",
-      "reason": "The diff includes documentation updates but provides no evidence of an actual production build artifact or deployment action/result; this cannot be confirmed from the diff summary.",
-      "evidence": [
-        "frontend/DEPLOYMENT.md"
+        "File diff summary: \"Added: 0\"",
+        "frontend/src/components/layout/SiteHeader.tsx",
+        "frontend/src/components/layout/SiteFooter.tsx",
+        "frontend/index.html"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Updated/introduced internal documentation and metadata files not explicitly requested (frontend-file-summaries.txt, project_state.json updates).",
-      "reason": "BuildRequest focuses on fixing gallery image paths, adding fallback UI, and redeploying; these ancillary summary/state file updates are not part of the stated requirements.",
+      "description": "Added/used a \"Get Directions\" link in the footer contact section (uses `CONTACT.location.directionsUrl`) and imported the `Navigation` icon.",
+      "reason": "The BuildRequest only asks to swap the logo and favicon to the uploaded image; it does not request adding new footer links or contact behavior.",
       "evidence": [
-        "frontend-file-summaries.txt",
-        "project_state.json"
+        "frontend/src/components/layout/SiteFooter.tsx"
       ]
     }
   ],
-  "confidence": 0.66,
+  "confidence": 0.68,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/DEPLOYMENT.md",
-    "frontend/src/components/sections/GallerySection.tsx",
+    "frontend/index.html",
+    "frontend/src/components/layout/SiteFooter.tsx",
+    "frontend/src/components/layout/SiteHeader.tsx",
     "project_state.json"
   ]
 }

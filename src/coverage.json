@@ -1,55 +1,38 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T20:15:28.378Z",
+  "generatedAt": "2026-02-10T16:24:46.115Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-31",
-        "summary": "Diagnose and fix the blank/missing gallery images on the live site by ensuring the Gallery section references the exact, deployable static asset paths for the 9 uploaded JPEG photos, and that those files are actually present under the frontend public assets directory used by the current code (paths like \"/assets/gallery/...jpeg\").",
+        "id": "REQ-4",
+        "summary": "Add the uploaded image file (MR icon-1.png) to the frontend public static assets and use it as the primary brand logo in the site header and footer, replacing the current logo asset reference.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.22 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.35.08 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.23 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.16 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.18 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.39.25 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.35.09 PM.jpeg",
-          "frontend/public/assets/gallery/WhatsApp Image 2026-02-08 at 5.43.17 PM (1).jpeg"
+          "frontend/public/assets/MR icon-1.png",
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
+          "frontend/src/components/layout/SiteHeader.tsx",
+          "frontend/src/components/layout/SiteFooter.tsx"
         ]
       },
       {
-        "id": "REQ-32",
-        "summary": "Harden the Gallery UI so that if any image fails to load, the UI shows a visible fallback state (e.g., a neutral placeholder block with short English text like \"Image unavailable\") instead of appearing blank, without breaking the existing hover overlay and modal behavior.",
+        "id": "REQ-5",
+        "summary": "Update the site favicon configuration to use the uploaded image file (MR icon-1.png) instead of the current favicon asset, ensuring the href is correctly URL-encoded where necessary.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
+          "frontend/index.html"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
-        ]
-      },
-      {
-        "id": "REQ-33",
-        "summary": "Re-run the production build and redeploy after fixing the gallery asset paths so the updated gallery is live and the photos are visible in production.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/DEPLOYMENT.md"
-        ],
-        "matchedFiles": [
-          "frontend/DEPLOYMENT.md"
+          "frontend/index.html"
         ]
       }
     ]
@@ -59,8 +42,9 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/DEPLOYMENT.md",
-    "frontend/src/components/sections/GallerySection.tsx",
+    "frontend/index.html",
+    "frontend/src/components/layout/SiteFooter.tsx",
+    "frontend/src/components/layout/SiteHeader.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
