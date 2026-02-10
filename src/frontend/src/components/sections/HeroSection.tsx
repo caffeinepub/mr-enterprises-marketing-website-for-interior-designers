@@ -31,14 +31,11 @@ export function HeroSection() {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance leading-tight text-white">
-            MR Enterprises - Carpet Manufacturer
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-balance leading-tight text-zinc-700">
+            MR Enterprises - Premium Crafted Carpets & Textile Solutions for Interior Designers & Projects
           </h1>
-          <p className="text-base md:text-lg mb-6 text-white">
-            Trusted by leading designers in Delhi–NCR & Chandigarh.
-          </p>
-          <p className="text-lg md:text-xl mb-8 text-white">
-            Wall-to-wall, tiles, and hand-tufted rugs for residential and commercial interiors.
+          <p className="text-lg md:text-xl mb-8 text-white font-light">
+            Custom sizes, premium quality, project support from concept to delivery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={scrollToGallery} className="px-8">

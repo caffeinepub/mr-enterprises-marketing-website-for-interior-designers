@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-header-logo-image-element-at-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-a-1-img-1-implemented-in-frontend-src-components-layout-siteheader-tsx-to-be-slightly-smaller-and-visually-centered-by-adjusting-only-the-img-element-s-tailwind-classes-do-not-modify-the-parent-a-or-other-header-layout-elements",
-      "featureTitle": "Update the header logo image element at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]` (implemented in `frontend/src/components/layout/SiteHeader.tsx`) to be slightly smaller and visually centered by adjusting only the `<img>` element’s Tailwind classes (do not modify the parent `<a>` or other header layout elements).",
+      "featureId": "feature-in-the-benefits-section-change-the-benefit-card-title-text-from-responsible-materials-to-sustainable-only-within-the-selected-element-at-html-body-div-div-main-section-4-div-1",
+      "featureTitle": "In the Benefits section, change the benefit card title text from \"Responsible Materials\" to \"Sustainable\" (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
       "files": [
-        "frontend/src/components/layout/SiteHeader.tsx"
+        "frontend/src/components/sections/BenefitsSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,7 +15,25 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-4"
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-benefits-card-subtext-the-benefit-description-paragraphs-to-use-justified-alignment-instead-of-center-alignment-only-within-the-selected-element-at-html-body-div-div-main-section-4-div-1",
+      "featureTitle": "Update the Benefits card subtext (the benefit description paragraphs) to use justified alignment instead of center alignment (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
+      "files": [
+        "frontend/src/components/sections/BenefitsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
       ],
       "confidence": "high"
     }

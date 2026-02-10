@@ -1,21 +1,36 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Resize and center the header logo image",
+  "title": "Benefits section copy update + justified benefit descriptions",
   "requirements": [
     {
-      "id": "REQ-4",
-      "summary": "Make the header logo image slightly smaller and visually centered by adjusting only the logo <img> Tailwind classes in SiteHeader.",
+      "id": "REQ-1",
+      "summary": "Rename the specified Benefits card title from \"Responsible Materials\" to \"Sustainable\" without changing any other page copy.",
       "acceptanceCriteria": [
-        "In `frontend/src/components/layout/SiteHeader.tsx`, the logo `<img>` height is reduced from its current size (currently `h-12`) to a smaller size.",
-        "The logo `<img>` is horizontally centered using only `<img>`-level styling (e.g., `block` + `mx-auto` or equivalent), without changing the surrounding header structure.",
-        "No other header elements (nav, buttons, containers, or the `<a>` wrapper) are modified."
+        "The benefits card that previously displayed the title \"Responsible Materials\" now displays \"Sustainable\".",
+        "No other section titles or copy elsewhere on the page are changed."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "path": "frontend/src/components/sections/BenefitsSection.tsx",
           "operation": "modify",
-          "description": "Update ONLY the logo `<img>` element at the specified XPath by adjusting its Tailwind `className`: reduce height from `h-12` to a smaller value (e.g., `h-10`) and add `<img>`-level centering classes (e.g., `block` and `mx-auto`, or equivalent) without changing the surrounding `<a>` or any other header/layout elements."
+          "description": "Update the Benefits data so the card title text changes from \"Responsible Materials\" to \"Sustainable\" (scoped only to the Benefits section rendering under the container element referenced by /html/body/div/div/main/section[4]/div[1])."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Render only the Benefits card description/subtext paragraphs with justified text alignment while keeping icons and titles centered.",
+      "acceptanceCriteria": [
+        "Benefit description text is rendered with CSS text alignment set to justify on mobile and desktop.",
+        "Icons and titles remain visually centered as they are now; only the description/subtext alignment changes.",
+        "No other paragraph text in other sections is affected."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/BenefitsSection.tsx",
+          "operation": "modify",
+          "description": "Adjust the Benefits card markup/classes so the card container continues centering the icon and title, but the description <p> uses justified text alignment (e.g., apply a justify utility only to the description element and/or move the centering utility off the wrapper). Ensure the change is limited to the Benefits section subtree under /html/body/div/div/main/section[4]/div[1] and does not affect other sections' paragraphs."
         }
       ]
     }

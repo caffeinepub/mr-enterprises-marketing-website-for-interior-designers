@@ -1,49 +1,54 @@
 {
   "kind": "build_request",
-  "title": "Resize and center the header logo image",
+  "title": "Update Benefits card label and justify benefit descriptions",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-4",
-      "text": "Update the header logo image element at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]` (implemented in `frontend/src/components/layout/SiteHeader.tsx`) to be slightly smaller and visually centered by adjusting only the `<img>` element’s Tailwind classes (do not modify the parent `<a>` or other header layout elements).",
+      "id": "REQ-1",
+      "text": "In the Benefits section, change the benefit card title text from \"Responsible Materials\" to \"Sustainable\" (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-3"
         ],
         "quotes": [
-          "make it a bit smaller and move it in center"
+          "change responsible materials to Sustainable"
         ]
       },
       "acceptanceCriteria": [
-        "In `frontend/src/components/layout/SiteHeader.tsx`, the logo `<img>` height is reduced from its current size (currently `h-12`) to a smaller size.",
-        "The logo `<img>` is horizontally centered using only `<img>`-level styling (e.g., `block` + `mx-auto` or equivalent), without changing the surrounding header structure.",
-        "No other header elements (nav, buttons, containers, or the `<a>` wrapper) are modified."
+        "The benefits card that previously displayed the title \"Responsible Materials\" now displays \"Sustainable\".",
+        "No other section titles or copy elsewhere on the page are changed."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Update the Benefits card subtext (the benefit description paragraphs) to use justified alignment instead of center alignment (only within the selected element at /html/body/div/div/main/section[4]/div[1]).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Make the subtext alignment justified, right now it is center aligned."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Benefit description text is rendered with CSS text alignment set to justify on mobile and desktop.",
+        "Icons and titles remain visually centered as they are now; only the description/subtext alignment changes.",
+        "No other paragraph text in other sections is affected."
       ]
     }
   ],
   "constraints": [
-    "Apply changes ONLY to the selected element: the header logo `<img>` at XPath `/html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]`.",
-    "Do not edit any files under `frontend/src/components/ui` or any other immutable paths.",
-    "Keep the backend unchanged."
+    "Apply changes only to the selected element (/html/body/div/div/main/section[4]/div[1]) in the Benefits section.",
+    "Do not modify any files under frontend/src/components/ui or any frontend immutablePaths."
   ],
   "nonGoals": [
-    "Redesigning the header layout or repositioning navigation/menu elements.",
-    "Changing the logo image file or generating new image assets.",
-    "Adding new routes, sections, or backend functionality."
+    "No changes to backend logic (Motoko actor remains unchanged).",
+    "No layout/spacing redesign beyond the requested text changes and subtext alignment update."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

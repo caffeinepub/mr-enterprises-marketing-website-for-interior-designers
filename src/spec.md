@@ -1,10 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Make the header logo image slightly smaller and visually centered using only the logo `<img>` element’s Tailwind classes.
+**Goal:** Update the Benefits section so a specific card title reads “Sustainable” and the benefit descriptions use justified alignment, without impacting any other page content.
 
 **Planned changes:**
-- In `frontend/src/components/layout/SiteHeader.tsx`, reduce the header logo `<img>` height from `h-12` to a smaller Tailwind height class.
-- Update the header logo `<img>` Tailwind classes to center it horizontally (e.g., `block` + `mx-auto`), without changing the surrounding `<a>` or any other header layout elements.
+- In the Benefits section (only within `/html/body/div/div/main/section[4]/div[1]`), change the benefit card title text from “Responsible Materials” to “Sustainable”.
+- In the same Benefits section scope, change the benefit description/subtext paragraphs to `text-align: justify` on mobile and desktop while keeping icons and titles centered.
 
-**User-visible outcome:** The header logo appears a bit smaller and centered in the header without any other header layout changes.
+**User-visible outcome:** On the Benefits section, the card previously titled “Responsible Materials” displays “Sustainable”, and the card descriptions appear justified while the icons and titles remain centered.
