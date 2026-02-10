@@ -1,19 +1,21 @@
 import { useMemo } from 'react';
 import { getPublicAssetUrl } from '@/utils/publicAssetUrl';
+import { Button } from '@/components/ui/button';
+import { CONTACT } from '@/config/contact';
 
 interface Collection {
   title: string;
   description: string;
-  features: string[];
+  tags: string[];
   thumbnailPool: string[];
 }
 
 export function CollectionsSection() {
   const collections: Collection[] = [
     {
-      title: 'Broadloom Carpets',
-      description: 'Wall-to-wall elegance in widths up to 15 feet. Perfect for seamless coverage.',
-      features: ['Custom widths', 'Unlimited colors'],
+      title: 'Machine-Made Carpet Rolls',
+      description: 'Efficient. Consistent. Project-friendly. Wall-to-wall carpet rolls ideal for large areas, offering uniform finish, reliable lead times, and cost efficiency for scale projects.',
+      tags: ['Custom widths', 'Consistent quality', 'Bulk supply'],
       thumbnailPool: [
         'generated/broadloom-thumb-02.dim_1200x675.png',
         'generated/broadloom-thumb-03.dim_1200x675.png',
@@ -21,8 +23,8 @@ export function CollectionsSection() {
     },
     {
       title: 'Modular Carpet Tiles',
-      description: 'Flexible design solutions with easy installation and maintenance.',
-      features: ['Mix & match', 'Easy replacement'],
+      description: 'Flexible layouts, easy maintenance. Perfect for offices and commercial spaces where design flexibility, replacement ease, and durability matter.',
+      tags: ['Mix & match', 'Easy replacement', 'Commercial use'],
       thumbnailPool: [
         'generated/tiles-thumb-01.dim_1200x675.png',
         'generated/tiles-thumb-02.dim_1200x675.png',
@@ -30,9 +32,9 @@ export function CollectionsSection() {
       ],
     },
     {
-      title: 'Hand-Tufted Rugs',
-      description: 'Artisanal craftsmanship meets contemporary design.',
-      features: ['Custom designs', 'Premium materials'],
+      title: 'Handmade Carpets',
+      description: 'Crafted character for signature spaces. Handmade carpets developed with attention to texture, material, and detailing—ideal for bespoke residential and hospitality projects.',
+      tags: ['Custom designs', 'Wool & viscose', 'Premium finish'],
       thumbnailPool: [
         'generated/handtufted-thumb-01.dim_1200x675.png',
         'generated/handtufted-thumb-02.dim_1200x675.png',
@@ -40,9 +42,9 @@ export function CollectionsSection() {
       ],
     },
     {
-      title: 'Natural Fiber Carpets',
-      description: 'Sustainable elegance with sisal, jute, and seagrass options.',
-      features: ['Eco-friendly', 'Durable'],
+      title: 'Jute Carpets',
+      description: 'Natural texture, sustainable appeal. Eco-conscious jute carpets that bring warmth and organic character to modern interiors.',
+      tags: ['Natural fiber', 'Sustainable', 'Earthy aesthetics'],
       thumbnailPool: [
         'generated/natural-thumb-01.dim_1200x675.png',
         'generated/natural-thumb-02.dim_1200x675.png',
@@ -64,10 +66,10 @@ export function CollectionsSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Diverse carpet collections
+            Carpet Collections for Design-Led Projects
           </h2>
           <p className="text-lg text-muted-foreground">
-            From wall-to-wall broadloom to modular tiles, we offer versatile solutions for every project.
+            Manufactured to suit residential, hospitality, and commercial interiors.
           </p>
         </div>
 
@@ -88,18 +90,29 @@ export function CollectionsSection() {
                 <h3 className="text-2xl font-bold mb-2">{collection.title}</h3>
                 <p className="text-muted-foreground mb-4">{collection.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {collection.features.map((feature) => (
+                  {collection.tags.map((tag) => (
                     <span
-                      key={feature}
+                      key={tag}
                       className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
                     >
-                      {feature}
+                      {tag}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="max-w-3xl mx-auto text-center mt-12">
+          <p className="text-lg text-muted-foreground mb-6">
+            All collections can be customized for size, color, and project requirements.
+          </p>
+          <Button asChild size="lg">
+            <a href={`mailto:${CONTACT.email}`}>
+              Request Samples
+            </a>
+          </Button>
         </div>
       </div>
     </section>

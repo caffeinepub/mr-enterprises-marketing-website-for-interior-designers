@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-mobile-layout-of-the-benefits-section-frontend-src-components-sections-benefitssection-tsx-so-its-sizing-and-element-placement-match-the-provided-reference-screenshot-image-14-png-this-includes-mobile-typography-scale-spacing-section-padding-header-block-spacing-inter-card-spacing-and-benefit-card-layout-2-column-grid-on-mobile-with-icon-title-and-description-aligned-positioned-as-shown",
-      "featureTitle": "Update the mobile layout of the Benefits section (frontend/src/components/sections/BenefitsSection.tsx) so its sizing and element placement match the provided reference screenshot (image-14.png). This includes mobile typography scale, spacing (section padding, header block spacing, inter-card spacing), and benefit-card layout (2-column grid on mobile with icon, title, and description aligned/positioned as shown).",
+      "featureId": "feature-update-the-collections-section-content-within-the-selected-element-html-body-div-div-main-section-3-div-1-to-match-the-provided-copy-including-heading-subheading-four-collection-cards-title-description-and-tags-a-closing-line-and-a-request-samples-cta-button-that-opens-the-user-s-email-app",
+      "featureTitle": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
       "files": [
-        "frontend/src/components/sections/BenefitsSection.tsx"
+        "frontend/src/components/sections/CollectionsSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",

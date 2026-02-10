@@ -1,21 +1,25 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Benefits section mobile layout alignment to reference screenshot",
+  "title": "Update Collections copy and add mailto Request Samples CTA",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Adjust Benefits section mobile typography, spacing, and 2-column benefit-card layout to match image-14.png while preserving md+ grid behavior.",
+      "summary": "Replace the Collections section heading/subheading and four collection cards content with the provided copy, add the closing line, and add a mailto “Request Samples” CTA using CONTACT.email—without changing other sections.",
       "acceptanceCriteria": [
-        "On a small mobile viewport (e.g., 375px width), the Benefits section visually matches image-14.png for: (1) section heading and intro paragraph sizing and vertical spacing, (2) a 2x2 benefit grid with consistent gaps and centered alignment, (3) icon container size/shape and spacing above titles, (4) readable text sizes with no overflow or awkward wrapping.",
-        "On md+ breakpoints, the existing responsive intent is preserved (2 columns at md, 4 columns at lg) without regressions.",
-        "No changes are made to backend code."
+        "In frontend/src/components/sections/CollectionsSection.tsx, the section heading text is exactly “Carpet Collections for Design-Led Projects”.",
+        "In frontend/src/components/sections/CollectionsSection.tsx, the section subheading text is exactly “Manufactured to suit residential, hospitality, and commercial interiors.”",
+        "The four collection cards display the following titles and descriptions in order: (1) “Machine-Made Carpet Rolls” with description “Efficient. Consistent. Project-friendly. Wall-to-wall carpet rolls ideal for large areas, offering uniform finish, reliable lead times, and cost efficiency for scale projects.”; (2) “Modular Carpet Tiles” with description “Flexible layouts, easy maintenance. Perfect for offices and commercial spaces where design flexibility, replacement ease, and durability matter.”; (3) “Handmade Carpets” with description “Crafted character for signature spaces. Handmade carpets developed with attention to texture, material, and detailing—ideal for bespoke residential and hospitality projects.”; (4) “Jute Carpets” with description “Natural texture, sustainable appeal. Eco-conscious jute carpets that bring warmth and organic character to modern interiors.”",
+        "Each card renders its tag list as three visible tag pills matching the provided tags: (1) “Custom widths”, “Consistent quality”, “Bulk supply”; (2) “Mix & match”, “Easy replacement”, “Commercial use”; (3) “Custom designs”, “Wool & viscose”, “Premium finish”; (4) “Natural fiber”, “Sustainable”, “Earthy aesthetics”.",
+        "A closing line appears below the collection cards that reads exactly: “All collections can be customized for size, color, and project requirements.”",
+        "A visible CTA button labeled exactly “Request Samples” appears below the closing line and uses a mailto: link so it opens the user’s email app (use the existing CONTACT.email value from frontend/src/config/contact.ts).",
+        "No other sections outside the Collections section are modified."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/sections/BenefitsSection.tsx",
+          "path": "frontend/src/components/sections/CollectionsSection.tsx",
           "operation": "modify",
-          "description": "Update Tailwind classes for mobile-first sizing/placement to match image-14.png: refine section padding, header block max-width and spacing, mobile heading/paragraph typography scale and leading, and benefit grid spacing (separate row/column gaps as needed). Ensure the mobile grid remains 2 columns with centered cards, and preserve existing md:grid-cols-2 and lg:grid-cols-4 behavior. Adjust benefit card layout for icon container size/shape (rounded square), icon sizing, and vertical spacing above titles; add constraints (e.g., per-card max-width) to prevent awkward wrapping/overflow on 375px."
+          "description": "Update only the Collections section container content: set the heading/subheading strings to the provided copy; replace the 4-item collections data (titles, descriptions, and tags) to match the required order and exact text; ensure each card renders exactly 3 visible tag pills; add the closing line below the cards; add a visible “Request Samples” CTA styled as a button below the closing line using a mailto link derived from CONTACT.email (import CONTACT from frontend/src/config/contact.ts and use href=`mailto:${CONTACT.email}`); keep all changes scoped to this section so no other sections/components are modified."
         }
       ]
     }

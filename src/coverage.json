@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-10T19:18:41.049Z",
+  "generatedAt": "2026-02-10T19:48:14.634Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -12,13 +12,13 @@
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the mobile layout of the Benefits section (frontend/src/components/sections/BenefitsSection.tsx) so its sizing and element placement match the provided reference screenshot (image-14.png). This includes mobile typography scale, spacing (section padding, header block spacing, inter-card spacing), and benefit-card layout (2-column grid on mobile with icon, title, and description aligned/positioned as shown).",
+        "summary": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/BenefitsSection.tsx"
+          "frontend/src/components/sections/CollectionsSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/BenefitsSection.tsx"
+          "frontend/src/components/sections/CollectionsSection.tsx"
         ]
       }
     ]
@@ -28,7 +28,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/sections/BenefitsSection.tsx",
+    "frontend/src/components/sections/CollectionsSection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

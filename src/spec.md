@@ -1,11 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Adjust the mobile layout of the Benefits section so its typography, spacing, and 2-column benefit-card placement match the provided reference screenshot (image-14.png).
+**Goal:** Update the Collections section copy and add a “Request Samples” email CTA.
 
 **Planned changes:**
-- Update `frontend/src/components/sections/BenefitsSection.tsx` mobile styles to match the reference for section padding, heading/intro text sizing, and vertical spacing.
-- Implement/adjust the mobile benefit-card grid to a 2x2 layout with consistent gaps and centered alignment, matching icon/title/description positioning shown in the screenshot.
-- Preserve existing responsive behavior at md+ breakpoints (2 columns at md, 4 columns at lg) without visual regressions.
+- Update the Collections section heading and subheading text to the provided copy.
+- Replace the four collection cards’ titles, descriptions, and three tag pills per card to match the provided content and order.
+- Add the closing line below the cards: “All collections can be customized for size, color, and project requirements.”
+- Add a “Request Samples” CTA button below the closing line that uses a mailto: link to the existing CONTACT.email value so it opens the user’s email app.
 
-**User-visible outcome:** On small mobile screens (e.g., ~375px wide), the Benefits section looks like the provided screenshot, with properly scaled typography, clean spacing, and a centered 2x2 benefits grid; larger breakpoints continue to render as before.
+**User-visible outcome:** Visitors see the updated Collections section content and can click “Request Samples” to open their email app addressed to the configured contact email.

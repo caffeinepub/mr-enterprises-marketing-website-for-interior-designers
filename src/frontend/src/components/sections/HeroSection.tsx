@@ -31,7 +31,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-balance leading-tight text-zinc-700">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-balance leading-tight text-white">
             MR Enterprises - Premium Crafted Carpets & Textile Solutions for Interior Designers & Projects
           </h1>
           <p className="text-lg md:text-xl mb-8 text-white font-light">

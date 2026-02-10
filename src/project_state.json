@@ -1,14 +1,16 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Project to fine-tune mobile view layout (size and placement) for the live update.",
-  "architectural_notes": [],
+  "summary": "Website/content update: add a 'Carpet Collections for Design-Led Projects' section describing four carpet categories with tags, a strong closing line, and a 'Request Samples' email CTA.",
+  "architectural_notes": [
+    "CTA button should open the user's email app (e.g., mailto: link) for 'Request Samples'."
+  ],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-update-the-mobile-layout-of-the-benefits-section-frontend-src-components-sections-benefitssection-tsx-so-its-sizing-and-element-placement-match-the-provided-reference-screenshot-image-14-png-this-includes-mobile-typography-scale-spacing-section-padding-header-block-spacing-inter-card-spacing-and-benefit-card-layout-2-column-grid-on-mobile-with-icon-title-and-description-aligned-positioned-as-shown",
-      "title": "Update the mobile layout of the Benefits section (frontend/src/components/sections/BenefitsSection.tsx) so its sizing and element placement match the provided reference screenshot (image-14.png). This includes mobile typography scale, spacing (section padding, header block spacing, inter-card spacing), and benefit-card layout (2-column grid on mobile with icon, title, and description aligned/positioned as shown).",
+      "id": "feature-update-the-collections-section-content-within-the-selected-element-html-body-div-div-main-section-3-div-1-to-match-the-provided-copy-including-heading-subheading-four-collection-cards-title-description-and-tags-a-closing-line-and-a-request-samples-cta-button-that-opens-the-user-s-email-app",
+      "title": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
       "reqIds": [
         "REQ-1"
       ],
@@ -18,12 +20,13 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Adjust mobile view layout to match required size and placement",
+      "summary": "Add 'Carpet Collections for Design-Led Projects' section with four collection blurbs (Machine-Made Rolls, Modular Tiles, Handmade, Jute), tags, a closing line about customization, and a 'Request Samples' CTA that opens the user's email app.",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Match Benefits section mobile size and placement to provided screenshot",
+  "gameProjectType": "none",
+  "projectName": "Update Collections section copy and add Request Samples email CTA",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }
