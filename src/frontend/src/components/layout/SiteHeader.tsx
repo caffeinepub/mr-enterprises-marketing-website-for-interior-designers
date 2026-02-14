@@ -17,7 +17,6 @@ export function SiteHeader() {
 
   const navLinks = [
     { label: 'Gallery', href: '#gallery' },
-    { label: 'Collections', href: '#collections' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -35,7 +34,7 @@ export function SiteHeader() {
         isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="w-full px-6 md:container md:mx-auto md:px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('#hero'); }} className="flex items-center space-x-3">

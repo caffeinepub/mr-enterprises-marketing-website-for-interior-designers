@@ -1,25 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update Collections copy and add mailto Request Samples CTA",
+  "title": "Custom Carpets CTA image: full-bleed cover with sharp edges",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Replace the Collections section heading/subheading and four collection cards content with the provided copy, add the closing line, and add a mailto “Request Samples” CTA using CONTACT.email—without changing other sections.",
+      "summary": "Adjust only the Custom Carpets CTA image element so it renders full-bleed edge-to-edge with cover fit and no rounded corners.",
       "acceptanceCriteria": [
-        "In frontend/src/components/sections/CollectionsSection.tsx, the section heading text is exactly “Carpet Collections for Design-Led Projects”.",
-        "In frontend/src/components/sections/CollectionsSection.tsx, the section subheading text is exactly “Manufactured to suit residential, hospitality, and commercial interiors.”",
-        "The four collection cards display the following titles and descriptions in order: (1) “Machine-Made Carpet Rolls” with description “Efficient. Consistent. Project-friendly. Wall-to-wall carpet rolls ideal for large areas, offering uniform finish, reliable lead times, and cost efficiency for scale projects.”; (2) “Modular Carpet Tiles” with description “Flexible layouts, easy maintenance. Perfect for offices and commercial spaces where design flexibility, replacement ease, and durability matter.”; (3) “Handmade Carpets” with description “Crafted character for signature spaces. Handmade carpets developed with attention to texture, material, and detailing—ideal for bespoke residential and hospitality projects.”; (4) “Jute Carpets” with description “Natural texture, sustainable appeal. Eco-conscious jute carpets that bring warmth and organic character to modern interiors.”",
-        "Each card renders its tag list as three visible tag pills matching the provided tags: (1) “Custom widths”, “Consistent quality”, “Bulk supply”; (2) “Mix & match”, “Easy replacement”, “Commercial use”; (3) “Custom designs”, “Wool & viscose”, “Premium finish”; (4) “Natural fiber”, “Sustainable”, “Earthy aesthetics”.",
-        "A closing line appears below the collection cards that reads exactly: “All collections can be customized for size, color, and project requirements.”",
-        "A visible CTA button labeled exactly “Request Samples” appears below the closing line and uses a mailto: link so it opens the user’s email app (use the existing CONTACT.email value from frontend/src/config/contact.ts).",
-        "No other sections outside the Collections section are modified."
+        "On all breakpoints, the selected image renders edge-to-edge across the viewport width (no visible left/right margins around the image).",
+        "The selected image uses a cover-style fit (no distortion; cropped as needed).",
+        "The selected image has sharp corners (no rounding on the image itself).",
+        "No other elements besides the selected image element are modified."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/sections/CollectionsSection.tsx",
+          "path": "frontend/src/components/sections/CustomCarpetsCtaSection.tsx",
           "operation": "modify",
-          "description": "Update only the Collections section container content: set the heading/subheading strings to the provided copy; replace the 4-item collections data (titles, descriptions, and tags) to match the required order and exact text; ensure each card renders exactly 3 visible tag pills; add the closing line below the cards; add a visible “Request Samples” CTA styled as a button below the closing line using a mailto link derived from CONTACT.email (import CONTACT from frontend/src/config/contact.ts and use href=`mailto:${CONTACT.email}`); keep all changes scoped to this section so no other sections/components are modified."
+          "description": "Update ONLY the <img> element identified by the provided XPath by adjusting its className and/or inline style to (1) render as a full-bleed 100vw image with no side margins (e.g., using viewport-width sizing with centering/negative margins), (2) ensure cover-style fitting (object-cover with an explicit height/aspect strategy), and (3) remove any rounding on the image itself (e.g., rounded-none). Do not modify any surrounding wrappers or other DOM nodes."
         }
       ]
     }

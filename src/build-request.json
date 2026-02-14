@@ -1,46 +1,48 @@
 {
   "kind": "build_request",
-  "title": "Update Collections section copy and add Request Samples email CTA",
+  "title": "Make the Custom Carpets CTA image full-bleed with sharp edges",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
+      "text": "Update ONLY the selected image element (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` so it visually behaves like a cover image that stretches across the entire viewport width (no side margins) and has sharp (non-rounded) edges.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Carpet Collections for Design-Led Projects",
-          "Manufactured to suit residential, hospitality, and commercial interiors.",
-          "All collections can be customized for size, color, and project requirements.",
-          "CTA button: “Request Samples” ( which opens up email app )"
+          "can you get rid of the margins and stretch it across the entire screen width like cover image. Also sharp edges."
         ]
       },
       "acceptanceCriteria": [
-        "In frontend/src/components/sections/CollectionsSection.tsx, the section heading text is exactly “Carpet Collections for Design-Led Projects”.",
-        "In frontend/src/components/sections/CollectionsSection.tsx, the section subheading text is exactly “Manufactured to suit residential, hospitality, and commercial interiors.”",
-        "The four collection cards display the following titles and descriptions in order: (1) “Machine-Made Carpet Rolls” with description “Efficient. Consistent. Project-friendly. Wall-to-wall carpet rolls ideal for large areas, offering uniform finish, reliable lead times, and cost efficiency for scale projects.”; (2) “Modular Carpet Tiles” with description “Flexible layouts, easy maintenance. Perfect for offices and commercial spaces where design flexibility, replacement ease, and durability matter.”; (3) “Handmade Carpets” with description “Crafted character for signature spaces. Handmade carpets developed with attention to texture, material, and detailing—ideal for bespoke residential and hospitality projects.”; (4) “Jute Carpets” with description “Natural texture, sustainable appeal. Eco-conscious jute carpets that bring warmth and organic character to modern interiors.”",
-        "Each card renders its tag list as three visible tag pills matching the provided tags: (1) “Custom widths”, “Consistent quality”, “Bulk supply”; (2) “Mix & match”, “Easy replacement”, “Commercial use”; (3) “Custom designs”, “Wool & viscose”, “Premium finish”; (4) “Natural fiber”, “Sustainable”, “Earthy aesthetics”.",
-        "A closing line appears below the collection cards that reads exactly: “All collections can be customized for size, color, and project requirements.”",
-        "A visible CTA button labeled exactly “Request Samples” appears below the closing line and uses a mailto: link so it opens the user’s email app (use the existing CONTACT.email value from frontend/src/config/contact.ts).",
-        "No other sections outside the Collections section are modified."
+        "On all breakpoints, the selected image renders edge-to-edge across the viewport width (no visible left/right margins around the image).",
+        "The selected image uses a cover-style fit (no distortion; cropped as needed).",
+        "The selected image has sharp corners (no rounding on the image itself).",
+        "No other elements besides the selected image element are modified."
       ]
     }
   ],
   "constraints": [
-    "Apply changes only to the selected element corresponding to the Collections section container (/html/body/div/div/main/section[3]/div[1]); do not modify other sections/components beyond what is required to implement this content and CTA.",
-    "Do not edit any files under frontend/src/components/ui or other frontend immutable paths listed in SYSTEM_CONTEXT.",
-    "Backend (Motoko) must remain a single-actor architecture; no backend changes are required for this content update."
+    "Apply changes only to the selected element identified by the provided XPath; do not modify other DOM elements or components.",
+    "Do not modify files in `frontend/src/components/ui` or other frontend immutable paths listed in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Adding new backend endpoints or persistence for sample requests.",
-    "Implementing a contact form or sending emails server-side (mailto: only).",
-    "Changing gallery assets or generating new images for the collections section."
+    "Do not change the section layout, text content, or spacing of other elements in the Custom Carpets section.",
+    "Do not add new images or modify existing image assets."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

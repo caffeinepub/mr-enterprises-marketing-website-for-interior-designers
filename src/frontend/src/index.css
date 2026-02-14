@@ -81,4 +81,13 @@
     .text-balance {
         text-wrap: balance;
     }
+    
+    .text-body {
+        @apply text-sm md:text-base;
+    }
+    
+    /* Mobile-friendly content wrapper - uses full width on mobile with comfortable padding */
+    .content-wrapper-mobile {
+        @apply w-full px-6 md:max-w-3xl md:mx-auto;
+    }
 }

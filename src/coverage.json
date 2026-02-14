@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-10T19:48:14.634Z",
+  "generatedAt": "2026-02-14T20:00:25.952Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -12,13 +12,13 @@
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
+        "summary": "Update ONLY the selected image element (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` so it visually behaves like a cover image that stretches across the entire viewport width (no side margins) and has sharp (non-rounded) edges.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/CollectionsSection.tsx"
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/CollectionsSection.tsx"
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
         ]
       }
     ]
@@ -28,7 +28,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/sections/CollectionsSection.tsx",
+    "frontend/src/components/sections/CustomCarpetsCtaSection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

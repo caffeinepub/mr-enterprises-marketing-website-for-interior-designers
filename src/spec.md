@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Collections section copy and add a “Request Samples” email CTA.
+**Goal:** Make the Custom Carpets CTA image render as a full-bleed, cover-style image with sharp corners.
 
 **Planned changes:**
-- Update the Collections section heading and subheading text to the provided copy.
-- Replace the four collection cards’ titles, descriptions, and three tag pills per card to match the provided content and order.
-- Add the closing line below the cards: “All collections can be customized for size, color, and project requirements.”
-- Add a “Request Samples” CTA button below the closing line that uses a mailto: link to the existing CONTACT.email value so it opens the user’s email app.
+- Update only the specified `<img>` element in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` to span edge-to-edge across the viewport (no left/right margins).
+- Apply cover-style fitting to the image (cropping as needed without distortion).
+- Ensure the image itself has no corner rounding (sharp edges).
 
-**User-visible outcome:** Visitors see the updated Collections section content and can click “Request Samples” to open their email app addressed to the configured contact email.
+**User-visible outcome:** The Custom Carpets CTA image displays full-width across all breakpoints, behaves like a cover image, and shows sharp (non-rounded) corners.

@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-collections-section-content-within-the-selected-element-html-body-div-div-main-section-3-div-1-to-match-the-provided-copy-including-heading-subheading-four-collection-cards-title-description-and-tags-a-closing-line-and-a-request-samples-cta-button-that-opens-the-user-s-email-app",
-      "featureTitle": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
+      "featureId": "feature-update-only-the-selected-image-element-xpath-html-1-body-1-div-1-div-1-main-1-section-3-div-1-div-1-div-1-div-1-div-1-img-1-in-frontend-src-components-sections-customcarpetsctasection-tsx-so-it-visually-behaves-like-a-cover-image-that-stretches-across-the-entire-viewport-width-no-side-margins-and-has-sharp-non-rounded-edges",
+      "featureTitle": "Update ONLY the selected image element (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` so it visually behaves like a cover image that stretches across the entire viewport width (no side margins) and has sharp (non-rounded) edges.",
       "files": [
-        "frontend/src/components/sections/CollectionsSection.tsx"
+        "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",

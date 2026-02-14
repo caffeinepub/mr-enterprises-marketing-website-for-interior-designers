@@ -8,6 +8,7 @@ interface Collection {
   description: string;
   tags: string[];
   thumbnailPool: string[];
+  fixedThumbnail?: string;
 }
 
 export function CollectionsSection() {
@@ -16,10 +17,8 @@ export function CollectionsSection() {
       title: 'Machine-Made Carpet Rolls',
       description: 'Efficient. Consistent. Project-friendly. Wall-to-wall carpet rolls ideal for large areas, offering uniform finish, reliable lead times, and cost efficiency for scale projects.',
       tags: ['Custom widths', 'Consistent quality', 'Bulk supply'],
-      thumbnailPool: [
-        'generated/broadloom-thumb-02.dim_1200x675.png',
-        'generated/broadloom-thumb-03.dim_1200x675.png',
-      ],
+      thumbnailPool: [],
+      fixedThumbnail: 'generated/machine-made-roll-thumb.dim_1200x675.png',
     },
     {
       title: 'Modular Carpet Tiles',
@@ -56,19 +55,22 @@ export function CollectionsSection() {
   // Select one random thumbnail per collection on mount (stable across re-renders)
   const selectedThumbnails = useMemo(() => {
     return collections.map((collection) => {
+      if (collection.fixedThumbnail) {
+        return getPublicAssetUrl(collection.fixedThumbnail);
+      }
       const randomIndex = Math.floor(Math.random() * collection.thumbnailPool.length);
       return getPublicAssetUrl(collection.thumbnailPool[randomIndex]);
     });
-  }, []); // Empty deps = run once on mount
+  }, []);
 
   return (
     <section id="collections" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="w-full px-6 md:container md:mx-auto md:px-4">
+        <div className="content-wrapper-mobile text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Carpet Collections for Design-Led Projects
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             Manufactured to suit residential, hospitality, and commercial interiors.
           </p>
         </div>
@@ -77,7 +79,7 @@ export function CollectionsSection() {
           {collections.map((collection, index) => (
             <div
               key={collection.title}
-              className="group relative overflow-hidden rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -86,33 +88,34 @@ export function CollectionsSection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{collection.title}</h3>
-                <p className="text-muted-foreground mb-4">{collection.description}</p>
-                <div className="flex flex-wrap gap-2">
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold mb-3">{collection.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {collection.description}
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center mb-4">
                   {collection.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
+                      className="px-3 py-1 bg-secondary text-secondary-foreground text-xs rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="w-full"
+                >
+                  <a href={`mailto:${CONTACT.email}?subject=Inquiry about ${collection.title}`}>
+                    Learn More
+                  </a>
+                </Button>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="max-w-3xl mx-auto text-center mt-12">
-          <p className="text-lg text-muted-foreground mb-6">
-            All collections can be customized for size, color, and project requirements.
-          </p>
-          <Button asChild size="lg">
-            <a href={`mailto:${CONTACT.email}`}>
-              Request Samples
-            </a>
-          </Button>
         </div>
       </div>
     </section>

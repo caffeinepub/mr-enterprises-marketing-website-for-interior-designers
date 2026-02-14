@@ -1,16 +1,14 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Website/content update: add a 'Carpet Collections for Design-Led Projects' section describing four carpet categories with tags, a strong closing line, and a 'Request Samples' email CTA.",
-  "architectural_notes": [
-    "CTA button should open the user's email app (e.g., mailto: link) for 'Request Samples'."
-  ],
+  "summary": "New project",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-update-the-collections-section-content-within-the-selected-element-html-body-div-div-main-section-3-div-1-to-match-the-provided-copy-including-heading-subheading-four-collection-cards-title-description-and-tags-a-closing-line-and-a-request-samples-cta-button-that-opens-the-user-s-email-app",
-      "title": "Update the Collections section content within the selected element (/html/body/div/div/main/section[3]/div[1]) to match the provided copy, including heading, subheading, four collection cards (title, description, and tags), a closing line, and a “Request Samples” CTA button that opens the user’s email app.",
+      "id": "feature-update-only-the-selected-image-element-xpath-html-1-body-1-div-1-div-1-main-1-section-3-div-1-div-1-div-1-div-1-div-1-img-1-in-frontend-src-components-sections-customcarpetsctasection-tsx-so-it-visually-behaves-like-a-cover-image-that-stretches-across-the-entire-viewport-width-no-side-margins-and-has-sharp-non-rounded-edges",
+      "title": "Update ONLY the selected image element (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` so it visually behaves like a cover image that stretches across the entire viewport width (no side margins) and has sharp (non-rounded) edges.",
       "reqIds": [
         "REQ-1"
       ],
@@ -20,13 +18,12 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Add 'Carpet Collections for Design-Led Projects' section with four collection blurbs (Machine-Made Rolls, Modular Tiles, Handmade, Jute), tags, a closing line about customization, and a 'Request Samples' CTA that opens the user's email app.",
+      "summary": "Remove margins and stretch section/image to full screen width (cover style) with sharp (non-rounded) edges",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "gameProjectType": "none",
-  "projectName": "Update Collections section copy and add Request Samples email CTA",
+  "projectName": "Make the Custom Carpets CTA image full-bleed with sharp edges",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

@@ -29,7 +29,7 @@ export function AboutCapabilitiesSection() {
     <section id="about" className="py-16 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Your Manufacturing Partner
           </h2>
           <p className="text-base text-muted-foreground">
@@ -37,11 +37,11 @@ export function AboutCapabilitiesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
           {capabilities.map((capability, index) => (
             <Card key={index} className="border-border/50 hover:border-primary/50 transition-all duration-300">
-              <CardContent className="pt-5 pb-5">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+              <CardContent className="pt-5 pb-5 text-center">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 mx-auto">
                   <capability.icon className="text-primary" size={20} />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">{capability.title}</h3>

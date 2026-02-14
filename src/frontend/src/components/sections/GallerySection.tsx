@@ -13,11 +13,8 @@ interface GalleryImage {
 }
 
 export function GallerySection() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('All');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
-
-  const categories: Category[] = ['All', 'Hand-Tufted', 'Traditional', 'Contemporary', 'Manufacturing'];
 
   // Pre-compute all image URLs once to ensure consistency between grid and modal
   const galleryImages: GalleryImage[] = [
@@ -147,35 +144,30 @@ export function GallerySection() {
       title: 'Quality Control',
       category: 'Manufacturing',
     },
-    // New uploads from user - WhatsApp Image 2026-02-10 at 1.25.31 AM-1.jpeg
     {
       src: getPublicAssetUrl('WhatsApp Image 2026-02-10 at 1.25.31 AM-1.jpeg'),
       alt: 'Premium carpet installation showcasing quality craftsmanship',
       title: 'Premium Installation',
       category: 'Manufacturing',
     },
-    // New uploads from user - WhatsApp Image 2026-02-10 at 1.25.32 AM (1)-1.jpeg
     {
       src: getPublicAssetUrl('WhatsApp Image 2026-02-10 at 1.25.32 AM (1)-1.jpeg'),
       alt: 'Elegant traditional carpet with refined detailing',
       title: 'Refined Traditional',
       category: 'Traditional',
     },
-    // New uploads from user - WhatsApp Image 2026-02-10 at 1.25.32 AM-1.jpeg
     {
       src: getPublicAssetUrl('WhatsApp Image 2026-02-10 at 1.25.32 AM-1.jpeg'),
       alt: 'Contemporary carpet design with modern appeal',
       title: 'Modern Appeal',
       category: 'Contemporary',
     },
-    // New uploads from user - WhatsApp Image 2026-02-10 at 1.25.33 AM.jpeg
     {
       src: getPublicAssetUrl('gallery/WhatsApp Image 2026-02-10 at 1.25.33 AM.jpeg'),
       alt: 'Hand-tufted carpet showcasing artisan techniques',
       title: 'Artisan Techniques',
       category: 'Hand-Tufted',
     },
-    // New uploads from user - WhatsApp Image 2026-02-10 at 1.25.34 AM-1.jpeg
     {
       src: getPublicAssetUrl('WhatsApp Image 2026-02-10 at 1.25.34 AM-1.jpeg'),
       alt: 'Contemporary carpet with innovative design elements',
@@ -184,12 +176,7 @@ export function GallerySection() {
     },
   ];
 
-  const filteredImages = selectedCategory === 'All' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
-
   const handleImageError = (src: string, title: string) => {
-    // Log detailed error information to console for diagnostics
     console.error(`[Gallery] Failed to load image: "${title}"`, {
       url: src,
       title: title,
@@ -202,36 +189,19 @@ export function GallerySection() {
 
   return (
     <section id="gallery" className="py-20 bg-secondary/10">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Work
+      <div className="w-full px-6 md:container md:mx-auto md:px-4">
+        <div className="content-wrapper-mobile text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Inside MR Enterprises
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Browse our portfolio of carpet designs. Click any image to view details.
+          <p className="text-base text-muted-foreground">
+            These images capture different stages of our carpet projects — from design and material selection to production, finishing, and final installation.
           </p>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'bg-primary text-primary-foreground shadow-md'
-                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
         </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-          {filteredImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <div
               key={index}
               className="group relative aspect-[9/16] overflow-hidden rounded-lg cursor-pointer bg-muted"
@@ -265,7 +235,7 @@ export function GallerySection() {
 
         {/* Results Count */}
         <div className="text-center mt-8 text-sm text-muted-foreground">
-          Showing {filteredImages.length} of {galleryImages.length} items
+          Showing {galleryImages.length} of {galleryImages.length} items
         </div>
       </div>
 
