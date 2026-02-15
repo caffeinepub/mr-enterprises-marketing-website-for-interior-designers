@@ -1,35 +1,55 @@
 {
   "kind": "build_request",
-  "title": "Make the Custom Carpets CTA image full-bleed with sharp edges",
+  "title": "Fix Contact CTA tagline so it updates and remains centered in two lines",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update ONLY the selected image element (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` so it visually behaves like a cover image that stretches across the entire viewport width (no side margins) and has sharp (non-rounded) edges.",
+      "text": "Update ONLY the Contact CTA section’s selected heading and paragraph (XPath h2 and p in section 3) so the rendered text is exactly two centered lines: the <h2> reads \"Designed by you,\" and the <p> reads \"Executed by Us.\" across all breakpoints.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "can you get rid of the margins and stretch it across the entire screen width like cover image. Also sharp edges."
+          "You didn't do anything. It is still same. Please try again"
         ]
       },
       "acceptanceCriteria": [
-        "On all breakpoints, the selected image renders edge-to-edge across the viewport width (no visible left/right margins around the image).",
-        "The selected image uses a cover-style fit (no distortion; cropped as needed).",
-        "The selected image has sharp corners (no rounding on the image itself).",
-        "No other elements besides the selected image element are modified."
+        "In the Contact section, the heading text is exactly \"Designed by you,\" (including the comma).",
+        "Directly beneath it, the paragraph text is exactly \"Executed by Us.\" (including the period and capitalization).",
+        "Both lines are center-aligned on mobile and desktop (no breakpoint causes left alignment).",
+        "The change affects only the selected <h2> and <p> elements; no other text in the Contact section is modified."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Make the Contact CTA tagline change verifiable in the deployed UI by adding stable test hooks to ONLY the selected <h2> and <p> (e.g., data-testid attributes) without changing any other elements in the section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The user has selected the following 2 elements from the page for context."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The selected <h2> has a unique data-testid attribute.",
+        "The selected <p> has a unique data-testid attribute.",
+        "No other elements in ContactCtaSection receive new attributes/classes as part of this request."
       ]
     }
   ],
   "constraints": [
-    "Apply changes only to the selected element identified by the provided XPath; do not modify other DOM elements or components.",
-    "Do not modify files in `frontend/src/components/ui` or other frontend immutable paths listed in SYSTEM_CONTEXT."
+    "Apply changes ONLY to the two user-selected elements (the Contact CTA <h2> and <p> identified by the provided XPaths).",
+    "Do not modify any files under frontend/src/components/ui or any other frontend immutable paths listed in SYSTEM_CONTEXT.",
+    "Backend changes are not required for this request."
   ],
   "nonGoals": [
-    "Do not change the section layout, text content, or spacing of other elements in the Custom Carpets section.",
-    "Do not add new images or modify existing image assets."
+    "Changing any other copy in the Contact section (buttons, phone/location cards, footer attribution).",
+    "Redesigning the Contact section layout beyond ensuring the selected tagline remains centered and two-line.",
+    "Adding new backend functionality or persistence."
   ],
   "imageRequirements": {
     "required": [],

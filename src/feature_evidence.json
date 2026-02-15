@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-only-the-selected-image-element-xpath-html-1-body-1-div-1-div-1-main-1-section-3-div-1-div-1-div-1-div-1-div-1-img-1-in-frontend-src-components-sections-customcarpetsctasection-tsx-so-it-visually-behaves-like-a-cover-image-that-stretches-across-the-entire-viewport-width-no-side-margins-and-has-sharp-non-rounded-edges",
-      "featureTitle": "Update ONLY the selected image element (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) in `frontend/src/components/sections/CustomCarpetsCtaSection.tsx` so it visually behaves like a cover image that stretches across the entire viewport width (no side margins) and has sharp (non-rounded) edges.",
+      "featureId": "feature-update-only-the-contact-cta-section-s-selected-heading-and-paragraph-xpath-h2-and-p-in-section-3-so-the-rendered-text-is-exactly-two-centered-lines-the-h2-reads-designed-by-you-and-the-p-reads-executed-by-us-across-all-breakpoints",
+      "featureTitle": "Update ONLY the Contact CTA section’s selected heading and paragraph (XPath h2 and p in section 3) so the rendered text is exactly two centered lines: the <h2> reads \"Designed by you,\" and the <p> reads \"Executed by Us.\" across all breakpoints.",
       "files": [
-        "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        "frontend/src/components/sections/ContactCtaSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,6 +16,24 @@
       ],
       "testIds": [
         "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-contact-cta-tagline-change-verifiable-in-the-deployed-ui-by-adding-stable-test-hooks-to-only-the-selected-h2-and-p-e-g-data-testid-attributes-without-changing-any-other-elements-in-the-section",
+      "featureTitle": "Make the Contact CTA tagline change verifiable in the deployed UI by adding stable test hooks to ONLY the selected <h2> and <p> (e.g., data-testid attributes) without changing any other elements in the section.",
+      "files": [
+        "frontend/src/components/sections/ContactCtaSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
       ],
       "confidence": "high"
     }

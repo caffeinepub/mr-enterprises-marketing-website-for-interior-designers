@@ -1,22 +1,38 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Custom Carpets CTA image: full-bleed cover with sharp edges",
+  "title": "Fix Contact CTA tagline copy, centering, and add stable test hooks",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Adjust only the Custom Carpets CTA image element so it renders full-bleed edge-to-edge with cover fit and no rounded corners.",
+      "summary": "Update the Contact CTA heading and paragraph copy and ensure both lines remain center-aligned across breakpoints.",
       "acceptanceCriteria": [
-        "On all breakpoints, the selected image renders edge-to-edge across the viewport width (no visible left/right margins around the image).",
-        "The selected image uses a cover-style fit (no distortion; cropped as needed).",
-        "The selected image has sharp corners (no rounding on the image itself).",
-        "No other elements besides the selected image element are modified."
+        "In the Contact section, the heading text is exactly \"Designed by you,\" (including the comma).",
+        "Directly beneath it, the paragraph text is exactly \"Executed by Us.\" (including the period and capitalization).",
+        "Both lines are center-aligned on mobile and desktop (no breakpoint causes left alignment).",
+        "The change affects only the selected <h2> and <p> elements; no other text in the Contact section is modified."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/sections/CustomCarpetsCtaSection.tsx",
+          "path": "frontend/src/components/sections/ContactCtaSection.tsx",
           "operation": "modify",
-          "description": "Update ONLY the <img> element identified by the provided XPath by adjusting its className and/or inline style to (1) render as a full-bleed 100vw image with no side margins (e.g., using viewport-width sizing with centering/negative margins), (2) ensure cover-style fitting (object-cover with an explicit height/aspect strategy), and (3) remove any rounding on the image itself (e.g., rounded-none). Do not modify any surrounding wrappers or other DOM nodes."
+          "description": "Modify ONLY the Contact CTA tagline <h2> and <p> (the two lines inside the first text-center wrapper) so the rendered text is exactly \"Designed by you,\" and \"Executed by Us.\"; add/ensure per-element centering (e.g., explicit text-center classes on these elements only) so alignment remains centered at all breakpoints without changing any other Contact section text or elements."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add stable, unique test hooks to the Contact CTA tagline heading and paragraph only.",
+      "acceptanceCriteria": [
+        "The selected <h2> has a unique data-testid attribute.",
+        "The selected <p> has a unique data-testid attribute.",
+        "No other elements in ContactCtaSection receive new attributes/classes as part of this request."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/ContactCtaSection.tsx",
+          "operation": "modify",
+          "description": "Add data-testid attributes to ONLY the selected Contact CTA <h2> and <p> elements (e.g., data-testid=\"contact-cta-heading\" and data-testid=\"contact-cta-tagline\"); do not add attributes/classes to any other elements in ContactCtaSection."
         }
       ]
     }

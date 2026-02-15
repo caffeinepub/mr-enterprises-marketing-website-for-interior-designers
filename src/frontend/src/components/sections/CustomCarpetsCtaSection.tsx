@@ -21,20 +21,18 @@ export function CustomCarpetsCtaSection() {
     <section id="custom-carpets" className="py-20 bg-background">
       <div className="w-full px-6 md:container md:mx-auto md:px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Image Column */}
-            <div className="order-1 lg:order-2 relative">
-              <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
-                <img
-                  src={getPublicAssetUrl('generated/custom-project-cover.dim_1600x900.png')}
-                  alt="Custom carpet design workspace showing color swatches, material samples, and design sketches"
-                  className="w-full h-[400px] md:h-[500px] object-cover"
-                />
-              </div>
+          <div className="flex flex-col gap-8">
+            {/* Image - Always First */}
+            <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
+              <img
+                src={getPublicAssetUrl('generated/custom-project-cover.dim_1600x900.png')}
+                alt="Custom carpet design workspace showing color swatches, material samples, and design sketches"
+                className="w-full h-[400px] md:h-[500px] object-cover"
+              />
             </div>
 
-            {/* Content Column */}
-            <div className="order-2 lg:order-1 text-center lg:text-left">
+            {/* Content - Always Second */}
+            <div className="text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                 Designed by You. Executed by Us.
               </h2>
