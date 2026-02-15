@@ -1,12 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Update Section 3 copy and styling, and swap the Section 3 hero image to a seamless carpet texture.
+**Goal:** Refine the Gallery section’s header spacing and add a clear visual separation before the next section.
 
 **Planned changes:**
-- Change the Section 3 main heading text to exactly: "Why People Choose Us !!".
-- Increase the visual size of the "Capabilities" label (heading) in Section 3 without changing the list items.
-- Update the Section 3 supporting/last-line paragraph to exactly: "Created in collaboration with interior designers, tailored to each space."
-- Replace the Section 3 hero image with a newly generated seamless carpet texture/pattern image, and update the image alt text to describe the seamless carpet texture/pattern.
+- Increase vertical spacing between the Gallery header heading (<h2>) and its subheading/description (<p>) within `/main/section[2]/div[1]` to match the Contact section’s header spacing.
+- Add a horizontal divider at the bottom of the Gallery section within `/main/section[2]` to separate it from the following section.
 
-**User-visible outcome:** On the homepage, Section 3 will show the new heading and supporting line, a larger "Capabilities" label, and a seamless carpet texture image instead of the current workspace-style hero image.
+**User-visible outcome:** The Gallery section header has more breathing room between title and description, and a visible divider appears at the bottom of the Gallery section to clearly separate it from the next section.

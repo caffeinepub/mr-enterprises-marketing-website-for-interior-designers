@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-section-3-customcarpetsctasection-within-the-selected-container-html-body-div-div-main-section-3-div-1-change-the-main-heading-text-to-exactly-why-people-choose-us",
-      "featureTitle": "In Section 3 (CustomCarpetsCtaSection) within the selected container (/html/body/div/div/main/section[3]/div[1]), change the main heading text to exactly: \"Why People Choose Us !!\".",
+      "featureId": "feature-in-the-selected-gallery-section-header-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-increase-the-vertical-spacing-between-the-heading-and-the-subheading-so-it-visually-matches-the-spacing-used-between-the-heading-and-subheading-in-the-last-section-s-header-contact-section",
+      "featureTitle": "In the selected Gallery section header (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]), increase the vertical spacing between the heading and the subheading so it visually matches the spacing used between the heading and subheading in the last section’s header (Contact section).",
       "files": [
-        "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        "frontend/src/components/sections/GallerySection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,15 +15,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-5"
+        "REQ-1"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-in-section-3-increase-the-visual-size-of-the-capabilities-label-located-at-xpath-html-body-div-div-main-section-3-div-1-div-1-div-1-div-2-div-1-h3-1-currently-the-h3-with-text-capabilities",
-      "featureTitle": "In Section 3, increase the visual size of the \"Capabilities\" label located at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1] (currently the h3 with text \"Capabilities\").",
+      "featureId": "feature-at-the-end-of-the-selected-gallery-section-xpath-html-1-body-1-div-1-div-1-main-1-section-2-add-a-visual-divider-line-that-clearly-separates-it-from-the-next-section",
+      "featureTitle": "At the end of the selected Gallery section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]), add a visual divider line that clearly separates it from the next section.",
       "files": [
-        "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        "frontend/src/components/sections/GallerySection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -33,43 +33,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-in-section-3-update-the-supporting-last-line-paragraph-at-xpath-html-body-div-div-main-section-3-div-1-div-1-div-1-div-2-p-2-to-exactly-created-in-collaboration-with-interior-designers-tailored-to-each-space",
-      "featureTitle": "In Section 3, update the supporting/last line paragraph at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/p[2] to exactly: \"Created in collaboration with interior designers, tailored to each space.\"",
-      "files": [
-        "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-in-section-3-replace-the-current-hero-image-with-a-seamless-carpet-pattern-texture-image-do-not-use-the-current-custom-project-cover-workspace-image-update-the-img-to-reference-the-newly-generated-texture-asset-under-frontend-public-assets-generated-and-update-the-alt-text-to-accurately-describe-a-seamless-carpet-texture-pattern",
-      "featureTitle": "In Section 3, replace the current hero image with a seamless carpet pattern/texture image (do not use the current \"custom-project-cover\" workspace image). Update the <img> to reference the newly generated texture asset under frontend/public/assets/generated, and update the alt text to accurately describe a seamless carpet texture/pattern.",
-      "files": [
-        "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-8"
+        "REQ-2"
       ],
       "confidence": "high"
     }

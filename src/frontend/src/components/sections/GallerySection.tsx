@@ -203,8 +203,8 @@ export function GallerySection() {
   return (
     <section id="gallery" className="py-20 bg-secondary/10">
       <div className="w-full px-6 md:container md:mx-auto md:px-4">
-        <div className="content-wrapper-mobile text-center mb-12">
-          <h2 className="text-xl md:text-3xl font-bold mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold mb-[18px]">
             Inside MR Enterprises
           </h2>
           <p className="text-base text-muted-foreground">
@@ -213,7 +213,7 @@ export function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1.5">
           {galleryImages.map((image, index) => (
             <div
               key={index}
@@ -226,29 +226,21 @@ export function GallerySection() {
                   <p className="text-xs text-center px-2">Image unavailable</p>
                 </div>
               ) : (
-                <>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={() => handleImageError(image.src, image.title)}
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-background/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <p className="text-white font-semibold text-sm">{image.title}</p>
-                      <p className="text-white/80 text-xs">{image.category}</p>
-                    </div>
-                  </div>
-                </>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={() => handleImageError(image.src, image.title)}
+                  loading="lazy"
+                />
               )}
             </div>
           ))}
         </div>
 
-        {/* Results Count */}
-        <div className="text-center mt-8 text-sm text-muted-foreground">
-          Showing {galleryImages.length} of {galleryImages.length} items
+        {/* Visual Divider */}
+        <div className="mt-16">
+          <hr className="border-t border-border" />
         </div>
       </div>
 
@@ -274,15 +266,11 @@ export function GallerySection() {
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  className="w-full h-auto"
+                  className="w-full h-auto cursor-pointer"
+                  onClick={() => setSelectedImage(null)}
                   onError={() => handleImageError(selectedImage.src, selectedImage.title)}
                 />
               )}
-              <div className="p-6 bg-background">
-                <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
-                <p className="text-muted-foreground mb-2">{selectedImage.category}</p>
-                <p className="text-sm text-muted-foreground">{selectedImage.alt}</p>
-              </div>
             </div>
           )}
         </DialogContent>

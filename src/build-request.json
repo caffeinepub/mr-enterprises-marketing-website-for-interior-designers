@@ -1,90 +1,54 @@
 {
   "kind": "build_request",
-  "title": "Update Section 3 heading, Capabilities label size, supporting copy, and replace hero image with carpet texture",
+  "title": "Adjust Gallery section header spacing and add end-of-section divider",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-5",
-      "text": "In Section 3 (CustomCarpetsCtaSection) within the selected container (/html/body/div/div/main/section[3]/div[1]), change the main heading text to exactly: \"Why People Choose Us !!\".",
+      "id": "REQ-1",
+      "text": "In the selected Gallery section header (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]), increase the vertical spacing between the heading and the subheading so it visually matches the spacing used between the heading and subheading in the last section’s header (Contact section).",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "For Section 3\nHeading\nWhy People Choose Us !!"
+          "In section 1 - Increase the space between heading and subheading to match spacing in section 5 ( heading and subheading )"
         ]
       },
       "acceptanceCriteria": [
-        "The Section 3 primary heading renders exactly as: Why People Choose Us !!",
-        "No other section headings are changed"
+        "The Gallery section header’s <h2> and its descriptive <p> have noticeably more separation than before and visually matches the Contact section header spacing.",
+        "The change is implemented only within the selected Gallery section container element (/main/section[2]/div[1]) and does not affect other sections."
       ]
     },
     {
-      "id": "REQ-6",
-      "text": "In Section 3, increase the visual size of the \"Capabilities\" label located at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1] (currently the h3 with text \"Capabilities\").",
+      "id": "REQ-2",
+      "text": "At the end of the selected Gallery section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]), add a visual divider line that clearly separates it from the next section.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "Increase the size of text \" Capabilities\""
+          "At the end of section 2 add a visual divider"
         ]
       },
       "acceptanceCriteria": [
-        "The \"Capabilities\" heading is noticeably larger than before on mobile and desktop (e.g., Tailwind text-sm -> text-base or larger)",
-        "Only the \"Capabilities\" label styling in Section 3 is changed; the list items remain unchanged"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "In Section 3, update the supporting/last line paragraph at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/p[2] to exactly: \"Created in collaboration with interior designers, tailored to each space.\"",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Change last line to\n\"Created in collaboration with interior designers, tailored to each space.\""
-        ]
-      },
-      "acceptanceCriteria": [
-        "The paragraph text matches exactly: Created in collaboration with interior designers, tailored to each space.",
-        "Only this paragraph text in Section 3 is changed"
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "In Section 3, replace the current hero image with a seamless carpet pattern/texture image (do not use the current \"custom-project-cover\" workspace image). Update the <img> to reference the newly generated texture asset under frontend/public/assets/generated, and update the alt text to accurately describe a seamless carpet texture/pattern.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Change the image to just a seamless carpet pattern/texture picture"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Section 3 image no longer shows a workspace; it displays a seamless carpet texture/pattern",
-        "The image is loaded via getPublicAssetUrl('generated/<new-filename>') from frontend/public/assets/generated",
-        "The <img> alt text describes a seamless carpet texture/pattern"
+        "A horizontal divider (e.g., border-top/HR style) is visible at the bottom of the Gallery section content area.",
+        "The divider is added within the selected Gallery section element (/main/section[2]) and does not introduce dividers in other sections."
       ]
     }
   ],
   "constraints": [
-    "Apply changes ONLY within the user-selected elements/DOM area for Section 3 identified by these XPaths: /html/body/div/div/main/section[3]/div[1], /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1], /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/p[2].",
-    "Do not edit files under frontend/src/components/ui or any frontend immutablePaths listed in SYSTEM_CONTEXT."
+    "Apply changes ONLY to the elements identified by the provided XPaths: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1] and /html[1]/body[1]/div[1]/div[1]/main[1]/section[2].",
+    "Do not modify any frontend immutable paths listed in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Do not change the Section 3 capabilities list items or the \"Start a Project\" CTA behavior/link.",
-    "Do not update content or styling in other homepage sections."
+    "Do not adjust spacing in any other section besides the selected Gallery section elements (even if the user referenced other sections).",
+    "Do not change gallery grid layout, image assets, or modal behavior.",
+    "No backend changes."
   ],
   "imageRequirements": {
-    "required": [
-      "Seamless carpet pattern/texture image (seamless-carpet-texture.dim_1600x900.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

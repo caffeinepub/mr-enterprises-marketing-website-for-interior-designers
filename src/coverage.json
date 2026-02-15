@@ -1,59 +1,35 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T17:57:25.033Z",
+  "generatedAt": "2026-02-15T19:00:34.799Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 4,
-    "implemented": 4,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-5",
-        "summary": "In Section 3 (CustomCarpetsCtaSection) within the selected container (/html/body/div/div/main/section[3]/div[1]), change the main heading text to exactly: \"Why People Choose Us !!\".",
+        "id": "REQ-1",
+        "summary": "In the selected Gallery section header (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]), increase the vertical spacing between the heading and the subheading so it visually matches the spacing used between the heading and subheading in the last section’s header (Contact section).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+          "frontend/src/components/sections/GallerySection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+          "frontend/src/components/sections/GallerySection.tsx"
         ]
       },
       {
-        "id": "REQ-6",
-        "summary": "In Section 3, increase the visual size of the \"Capabilities\" label located at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1] (currently the h3 with text \"Capabilities\").",
+        "id": "REQ-2",
+        "summary": "At the end of the selected Gallery section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]), add a visual divider line that clearly separates it from the next section.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+          "frontend/src/components/sections/GallerySection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
-        ]
-      },
-      {
-        "id": "REQ-7",
-        "summary": "In Section 3, update the supporting/last line paragraph at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/p[2] to exactly: \"Created in collaboration with interior designers, tailored to each space.\"",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
-        ]
-      },
-      {
-        "id": "REQ-8",
-        "summary": "In Section 3, replace the current hero image with a seamless carpet pattern/texture image (do not use the current \"custom-project-cover\" workspace image). Update the <img> to reference the newly generated texture asset under frontend/public/assets/generated, and update the alt text to accurately describe a seamless carpet texture/pattern.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/generated/seamless-carpet-texture.dim_1600x900.png",
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/public/assets/generated/seamless-carpet-texture.dim_1600x900.png",
-          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+          "frontend/src/components/sections/GallerySection.tsx"
         ]
       }
     ]
@@ -63,8 +39,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/seamless-carpet-texture.dim_1600x900.png",
-    "frontend/src/components/sections/CustomCarpetsCtaSection.tsx",
+    "frontend/src/components/sections/GallerySection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
