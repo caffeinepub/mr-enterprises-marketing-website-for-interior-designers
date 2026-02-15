@@ -22,8 +22,8 @@ export default {
         },
         extend: {
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                serif: ['Playfair Display', 'Georgia', 'serif'],
+                sans: ['Jost', 'system-ui', 'sans-serif'],
+                serif: ['Arapey', 'Playfair Display', 'Georgia', 'serif'],
             },
             colors: {
                 border: 'oklch(var(--border))',

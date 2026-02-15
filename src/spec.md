@@ -1,11 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Ensure the Contact CTA tagline updates correctly to the requested copy and stays centered as exactly two lines across all breakpoints, with stable test hooks for verification.
+**Goal:** Update Section 3 copy and styling, and swap the Section 3 hero image to a seamless carpet texture.
 
 **Planned changes:**
-- Update only the selected Contact CTA `<h2>` text to `Designed by you,` and the selected `<p>` text to `Executed by Us.`.
-- Ensure both selected lines render center-aligned on mobile and desktop without any breakpoint-specific left alignment.
-- Add unique `data-testid` attributes to only the selected `<h2>` and `<p>` elements to make the change verifiable in the deployed UI.
+- Change the Section 3 main heading text to exactly: "Why People Choose Us !!".
+- Increase the visual size of the "Capabilities" label (heading) in Section 3 without changing the list items.
+- Update the Section 3 supporting/last-line paragraph to exactly: "Created in collaboration with interior designers, tailored to each space."
+- Replace the Section 3 hero image with a newly generated seamless carpet texture/pattern image, and update the image alt text to describe the seamless carpet texture/pattern.
 
-**User-visible outcome:** In the Contact CTA section, users see a two-line centered tagline reading “Designed by you,” and “Executed by Us.” on all screen sizes, and the elements can be reliably targeted in UI tests.
+**User-visible outcome:** On the homepage, Section 3 will show the new heading and supporting line, a larger "Capabilities" label, and a seamless carpet texture image instead of the current workspace-style hero image.

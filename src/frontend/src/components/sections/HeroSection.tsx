@@ -27,16 +27,15 @@ export function HeroSection() {
       {/* Content */}
       <div className="w-full px-6 md:container md:mx-auto md:px-4 relative z-10 pt-20">
         <div className="w-full md:max-w-2xl md:mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-balance leading-tight text-white">
+          <h1 className="text-xl md:text-3xl font-bold mb-8 text-balance leading-tight text-white tracking-normal">
             - MR Enterprises -
             <br />
-            Crafted Carpets for Designed Spaces
+            Carpet Manufacturing Partner for
+            <br />
+            Interior Designers | Hotels | Commercial Projects
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-white font-light">
-            A portfolio of our custom carpet work, created in collaboration with interior designers and project teams.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={scrollToGallery} className="px-8 w-full sm:w-auto">
+            <Button size="lg" onClick={scrollToGallery} className="px-8 w-full sm:w-auto font-bold">
               View our Work
               <ArrowRight className="ml-2" size={20} />
             </Button>
@@ -44,7 +43,7 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               asChild
-              className="px-8 w-full sm:w-auto"
+              className="px-8 w-full sm:w-auto font-bold border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               <a
                 href={whatsappUrl}

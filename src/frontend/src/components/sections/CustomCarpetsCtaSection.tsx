@@ -25,16 +25,16 @@ export function CustomCarpetsCtaSection() {
             {/* Image - Always First */}
             <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
               <img
-                src={getPublicAssetUrl('generated/custom-project-cover.dim_1600x900.png')}
-                alt="Custom carpet design workspace showing color swatches, material samples, and design sketches"
+                src={getPublicAssetUrl('generated/seamless-carpet-texture.dim_1600x900.png')}
+                alt="Seamless carpet texture pattern showcasing quality and craftsmanship"
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
             </div>
 
             {/* Content - Always Second */}
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                Designed by You. Executed by Us.
+              <h2 className="text-xl md:text-4xl font-bold mb-4 leading-tight">
+                Why People Choose Us !!
               </h2>
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">
                 We produce fully custom carpets tailored to your exact project requirements.
@@ -42,7 +42,7 @@ export function CustomCarpetsCtaSection() {
 
               {/* Capabilities List */}
               <div className="mb-8">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+                <h3 className="text-base md:text-lg font-semibold uppercase tracking-wider text-accent mb-4">
                   Capabilities
                 </h3>
                 <ul className="space-y-3">
@@ -63,7 +63,7 @@ export function CustomCarpetsCtaSection() {
 
               {/* Supporting Line */}
               <p className="text-base text-muted-foreground mb-8 leading-relaxed italic border-l-4 border-accent/30 pl-4">
-                We work closely with interior designers to ensure every carpet aligns perfectly with the intended space.
+                Created in collaboration with interior designers, tailored to each space.
               </p>
 
               {/* CTA Button */}

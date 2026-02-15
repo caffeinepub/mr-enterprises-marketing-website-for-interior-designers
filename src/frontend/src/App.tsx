@@ -3,7 +3,7 @@ import { HeroSection } from './components/sections/HeroSection';
 import { GallerySection } from './components/sections/GallerySection';
 import { CollectionsSection } from './components/sections/CollectionsSection';
 import { CustomCarpetsCtaSection } from './components/sections/CustomCarpetsCtaSection';
-import { BenefitsSection } from './components/sections/BenefitsSection';
+import { UsefulLinksSection } from './components/sections/UsefulLinksSection';
 import { ContactCtaSection } from './components/sections/ContactCtaSection';
 
 // Feature flag to enable/disable Collections section
@@ -18,7 +18,7 @@ function App() {
         <GallerySection />
         {SHOW_COLLECTIONS && <CollectionsSection />}
         <CustomCarpetsCtaSection />
-        <BenefitsSection />
+        <UsefulLinksSection />
         <ContactCtaSection />
       </main>
     </div>

@@ -204,7 +204,7 @@ export function GallerySection() {
     <section id="gallery" className="py-20 bg-secondary/10">
       <div className="w-full px-6 md:container md:mx-auto md:px-4">
         <div className="content-wrapper-mobile text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-xl md:text-3xl font-bold mb-4">
             Inside MR Enterprises
           </h2>
           <p className="text-base text-muted-foreground">

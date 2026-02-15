@@ -3,30 +3,52 @@
   "projectStateVersion": 3,
   "summary": "New project",
   "architectural_notes": [],
-  "known_issues": [
-    "Reported regression/issue: latest deployment/build did not apply intended UI changes (app still looks the same; centering/split-into-two-lines not reflected)."
-  ],
-  "isFixRequest": true,
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Seamless carpet pattern/texture image (seamless-carpet-texture.dim_1600x900.png)",
   "existing_features": [
     {
-      "id": "feature-update-only-the-contact-cta-section-s-selected-heading-and-paragraph-xpath-h2-and-p-in-section-3-so-the-rendered-text-is-exactly-two-centered-lines-the-h2-reads-designed-by-you-and-the-p-reads-executed-by-us-across-all-breakpoints",
-      "title": "Update ONLY the Contact CTA section’s selected heading and paragraph (XPath h2 and p in section 3) so the rendered text is exactly two centered lines: the <h2> reads \"Designed by you,\" and the <p> reads \"Executed by Us.\" across all breakpoints.",
+      "id": "feature-in-section-3-customcarpetsctasection-within-the-selected-container-html-body-div-div-main-section-3-div-1-change-the-main-heading-text-to-exactly-why-people-choose-us",
+      "title": "In Section 3 (CustomCarpetsCtaSection) within the selected container (/html/body/div/div/main/section[3]/div[1]), change the main heading text to exactly: \"Why People Choose Us !!\".",
       "reqIds": [
-        "REQ-1"
+        "REQ-5"
       ],
       "version": 1
     },
     {
-      "id": "feature-make-the-contact-cta-tagline-change-verifiable-in-the-deployed-ui-by-adding-stable-test-hooks-to-only-the-selected-h2-and-p-e-g-data-testid-attributes-without-changing-any-other-elements-in-the-section",
-      "title": "Make the Contact CTA tagline change verifiable in the deployed UI by adding stable test hooks to ONLY the selected <h2> and <p> (e.g., data-testid attributes) without changing any other elements in the section.",
+      "id": "feature-in-section-3-increase-the-visual-size-of-the-capabilities-label-located-at-xpath-html-body-div-div-main-section-3-div-1-div-1-div-1-div-2-div-1-h3-1-currently-the-h3-with-text-capabilities",
+      "title": "In Section 3, increase the visual size of the \"Capabilities\" label located at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1] (currently the h3 with text \"Capabilities\").",
       "reqIds": [
-        "REQ-2"
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-section-3-update-the-supporting-last-line-paragraph-at-xpath-html-body-div-div-main-section-3-div-1-div-1-div-1-div-2-p-2-to-exactly-created-in-collaboration-with-interior-designers-tailored-to-each-space",
+      "title": "In Section 3, update the supporting/last line paragraph at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/p[2] to exactly: \"Created in collaboration with interior designers, tailored to each space.\"",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-section-3-replace-the-current-hero-image-with-a-seamless-carpet-pattern-texture-image-do-not-use-the-current-custom-project-cover-workspace-image-update-the-img-to-reference-the-newly-generated-texture-asset-under-frontend-public-assets-generated-and-update-the-alt-text-to-accurately-describe-a-seamless-carpet-texture-pattern",
+      "title": "In Section 3, replace the current hero image with a seamless carpet pattern/texture image (do not use the current \"custom-project-cover\" workspace image). Update the <img> to reference the newly generated texture asset under frontend/public/assets/generated, and update the alt text to accurately describe a seamless carpet texture/pattern.",
+      "reqIds": [
+        "REQ-8"
       ],
       "version": 1
     }
   ],
-  "new_feature_requests": [],
-  "projectName": "Fix Contact CTA tagline so it updates and remains centered in two lines",
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Update Section 3: adjust 'Capabilities' text size, revise last line copy, and replace image with seamless carpet pattern/texture",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Update Section 3 heading, Capabilities label size, supporting copy, and replace hero image with carpet texture",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

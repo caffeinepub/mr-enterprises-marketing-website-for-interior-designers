@@ -17,6 +17,7 @@ export function SiteHeader() {
 
   const navLinks = [
     { label: 'Gallery', href: '#gallery' },
+    { label: 'Links', href: '#useful-links' },
     { label: 'Contact', href: '#contact' },
   ];
 

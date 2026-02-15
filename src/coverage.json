@@ -1,35 +1,59 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T07:41:30.760Z",
+  "generatedAt": "2026-02-15T17:57:25.033Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 4,
+    "implemented": 4,
     "items": [
       {
-        "id": "REQ-1",
-        "summary": "Update ONLY the Contact CTA section’s selected heading and paragraph (XPath h2 and p in section 3) so the rendered text is exactly two centered lines: the <h2> reads \"Designed by you,\" and the <p> reads \"Executed by Us.\" across all breakpoints.",
+        "id": "REQ-5",
+        "summary": "In Section 3 (CustomCarpetsCtaSection) within the selected container (/html/body/div/div/main/section[3]/div[1]), change the main heading text to exactly: \"Why People Choose Us !!\".",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/ContactCtaSection.tsx"
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/ContactCtaSection.tsx"
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
         ]
       },
       {
-        "id": "REQ-2",
-        "summary": "Make the Contact CTA tagline change verifiable in the deployed UI by adding stable test hooks to ONLY the selected <h2> and <p> (e.g., data-testid attributes) without changing any other elements in the section.",
+        "id": "REQ-6",
+        "summary": "In Section 3, increase the visual size of the \"Capabilities\" label located at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1] (currently the h3 with text \"Capabilities\").",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/ContactCtaSection.tsx"
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/ContactCtaSection.tsx"
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "In Section 3, update the supporting/last line paragraph at XPath /html/body/div/div/main/section[3]/div[1]/div[1]/div[1]/div[2]/p[2] to exactly: \"Created in collaboration with interior designers, tailored to each space.\"",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "In Section 3, replace the current hero image with a seamless carpet pattern/texture image (do not use the current \"custom-project-cover\" workspace image). Update the <img> to reference the newly generated texture asset under frontend/public/assets/generated, and update the alt text to accurately describe a seamless carpet texture/pattern.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/seamless-carpet-texture.dim_1600x900.png",
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/seamless-carpet-texture.dim_1600x900.png",
+          "frontend/src/components/sections/CustomCarpetsCtaSection.tsx"
         ]
       }
     ]
@@ -39,7 +63,8 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/sections/ContactCtaSection.tsx",
+    "frontend/public/assets/generated/seamless-carpet-texture.dim_1600x900.png",
+    "frontend/src/components/sections/CustomCarpetsCtaSection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
