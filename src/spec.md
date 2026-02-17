@@ -1,10 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Refine the Gallery section’s header spacing and add a clear visual separation before the next section.
+**Goal:** Remove 6 specific images from the Gallery grid so they no longer appear and the grid reflows without empty slots.
 
 **Planned changes:**
-- Increase vertical spacing between the Gallery header heading (<h2>) and its subheading/description (<p>) within `/main/section[2]/div[1]` to match the Contact section’s header spacing.
-- Add a horizontal divider at the bottom of the Gallery section within `/main/section[2]` to separate it from the following section.
+- Remove the 6 specified image `src` entries from `frontend/src/data/galleryImages.ts` so they no longer render in the Gallery grid.
+- Ensure the Gallery grid reflows naturally with no blank placeholders and the modal viewer continues to work for remaining images.
 
-**User-visible outcome:** The Gallery section header has more breathing room between title and description, and a visible divider appears at the bottom of the Gallery section to clearly separate it from the next section.
+**User-visible outcome:** The Gallery section no longer shows the 6 selected images; the remaining images shift to fill the grid normally, and clicking images still opens/closes the modal viewer as before.

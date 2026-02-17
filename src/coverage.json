@@ -1,35 +1,24 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T19:00:34.799Z",
+  "generatedAt": "2026-02-17T18:03:34.919Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
-        "id": "REQ-1",
-        "summary": "In the selected Gallery section header (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]), increase the vertical spacing between the heading and the subheading so it visually matches the spacing used between the heading and subheading in the last section’s header (Contact section).",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
-        ]
-      },
-      {
         "id": "REQ-2",
-        "summary": "At the end of the selected Gallery section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]), add a visual divider line that clearly separates it from the next section.",
+        "summary": "Remove the six selected images from the Gallery grid by deleting their corresponding entries from the gallery data source so the images no longer render and the grid reflows with no empty slots. The images to remove correspond to the <img> elements at XPaths: (1) /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[7]/img[1], (2) /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[8]/img[1], (3) /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[17]/img[1], (4) /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[21]/img[1], (5) /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[27]/img[1], (6) /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[28]/img[1]. In the current code, these correspond to removing these `src` entries from `frontend/src/data/galleryImages.ts`: `generated/gallery-work-07.dim_1200x1600.jpg`, `generated/gallery-work-08.dim_1200x1600.jpg`, `generated/gallery-real-17.dim_1200x1600.jpg`, `generated/gallery-real-21.dim_1200x1600.jpg`, `generated/gallery-real-27.dim_1200x1600.jpg`, `generated/gallery-real-28.dim_1200x1600.jpg`.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
+          "frontend/src/data/galleryImages.ts"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/GallerySection.tsx"
+          "frontend/src/data/galleryImages.ts"
         ]
       }
     ]
@@ -39,7 +28,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/sections/GallerySection.tsx",
+    "frontend/src/data/galleryImages.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

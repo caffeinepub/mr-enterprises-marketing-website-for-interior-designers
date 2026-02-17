@@ -1,193 +1,19 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
-import { X, ImageOff } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { X, ImageOff, ExternalLink } from 'lucide-react';
 import { getPublicAssetUrl } from '@/utils/publicAssetUrl';
-
-type Category = 'All' | 'Hand-Tufted' | 'Traditional' | 'Contemporary' | 'Manufacturing';
-
-interface GalleryImage {
-  src: string;
-  alt: string;
-  title: string;
-  category: Category;
-}
+import { galleryImages, type GalleryImage } from '@/data/galleryImages';
 
 export function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
   // Pre-compute all image URLs once to ensure consistency between grid and modal
-  const galleryImages: GalleryImage[] = [
-    {
-      src: getPublicAssetUrl('WhatsApp Image 2026-02-08 at 5.43.18 PM-1.jpeg'),
-      alt: 'Contemporary black and white geometric carpet design',
-      title: 'Modern Geometric',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('WhatsApp Image 2026-01-07 at 10.26.52 PM.jpeg'),
-      alt: 'Solid brown hand-tufted carpet with plush texture',
-      title: 'Plush Brown Carpet',
-      category: 'Hand-Tufted',
-    },
-    {
-      src: getPublicAssetUrl('WhatsApp Image 2026-02-11 at 4.24.47 PM.jpeg'),
-      alt: 'Close-up of textured carpet surface with pen for scale',
-      title: 'Carpet Texture Detail',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('Ref. Image 5.jpeg'),
-      alt: 'Ornate traditional carpet in auditorium with medallion pattern',
-      title: 'Auditorium Carpet Installation',
-      category: 'Traditional',
-    },
-    {
-      src: getPublicAssetUrl('Ref. Image 2.jpeg'),
-      alt: 'Modern geometric carpet in auditorium with hexagonal pattern',
-      title: 'Contemporary Auditorium Design',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('WhatsApp Image 2026-02-08 at 5.43.17 PM-1.jpeg'),
-      alt: 'Artisans hand-tufting carpet',
-      title: 'Craftsmanship in Action',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-07.dim_1200x1600.jpg'),
-      alt: 'Contemporary carpet with bold geometric pattern and high contrast lighting',
-      title: 'Bold Geometry',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-08.dim_1200x1600.jpg'),
-      alt: 'Contemporary carpet with subtle gradient and minimal pattern',
-      title: 'Subtle Gradient',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-09.dim_1200x1600.jpg'),
-      alt: 'Contemporary carpet with modern abstract shapes in warm neutral palette',
-      title: 'Abstract Modern',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-10.dim_1200x1600.jpg'),
-      alt: 'Traditional carpet with ornate medallion motif in rich reds and golds',
-      title: 'Ornate Medallion',
-      category: 'Traditional',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-11.dim_1200x1600.jpg'),
-      alt: 'Traditional carpet with repeating floral vines in deep navy and cream',
-      title: 'Floral Vines',
-      category: 'Traditional',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-12.dim_1200x1600.jpg'),
-      alt: 'Traditional carpet with classic border frame and dense patterning',
-      title: 'Classic Border',
-      category: 'Traditional',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-13.dim_1200x1600.jpg'),
-      alt: 'Hand-tufted carpet close-up showing high pile texture and fiber detail',
-      title: 'Textured Pile',
-      category: 'Hand-Tufted',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-14.dim_1200x1600.jpg'),
-      alt: 'Hand-tufted artisanal pattern with visible tufting depth',
-      title: 'Artisanal Craft',
-      category: 'Hand-Tufted',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-15.dim_1200x1600.jpg'),
-      alt: 'Hand-tufted modern motif with tactile texture',
-      title: 'Modern Tufted',
-      category: 'Hand-Tufted',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-16.dim_1200x1600.jpg'),
-      alt: 'Carpet weaving machine detail in industrial setting',
-      title: 'Weaving Process',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-17.dim_1200x1600.jpg'),
-      alt: 'Yarn cones and spools in factory with orderly rows',
-      title: 'Yarn Preparation',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-18.dim_1200x1600.jpg'),
-      alt: 'Artisan hands working on carpet finishing',
-      title: 'Finishing Touch',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-19.dim_1200x1600.jpg'),
-      alt: 'Contemporary neutral texture with subtle linear pattern',
-      title: 'Neutral Elegance',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-20.dim_1200x1600.jpg'),
-      alt: 'Traditional-inspired pattern in muted earth tones',
-      title: 'Earth Tones',
-      category: 'Traditional',
-    },
-    {
-      src: getPublicAssetUrl('generated/gallery-work-21.dim_1200x1600.jpg'),
-      alt: 'Quality inspection scene with measuring tools and carpet surface detail',
-      title: 'Quality Control',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('ChatGPT Image Jan 18, 2026, 10_22_42 PM.png'),
-      alt: 'Luxury staircase with ornate traditional carpet runner',
-      title: 'Grand Staircase Installation',
-      category: 'Traditional',
-    },
-    // 6 new high-quality generated images
-    {
-      src: getPublicAssetUrl('generated/generated/gallery-random-01.dim_1200x1600.jpg'),
-      alt: 'Contemporary carpet with bold geometric pattern',
-      title: 'Bold Geometric Design',
-      category: 'Contemporary',
-    },
-    {
-      src: getPublicAssetUrl('generated/generated/gallery-random-02.dim_1200x1600.jpg'),
-      alt: 'Traditional ornate carpet with medallion motif',
-      title: 'Ornate Medallion',
-      category: 'Traditional',
-    },
-    {
-      src: getPublicAssetUrl('generated/generated/gallery-random-03.dim_1200x1600.jpg'),
-      alt: 'Close-up of hand-tufted carpet texture and fibers',
-      title: 'Hand-Tufted Detail',
-      category: 'Hand-Tufted',
-    },
-    {
-      src: getPublicAssetUrl('generated/generated/gallery-random-04.dim_1200x1600.jpg'),
-      alt: 'Yarn spools and cones in textile factory',
-      title: 'Yarn Preparation',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('generated/generated/gallery-random-05.dim_1200x1600.jpg'),
-      alt: 'Carpet weaving and tufting machinery in operation',
-      title: 'Manufacturing Process',
-      category: 'Manufacturing',
-    },
-    {
-      src: getPublicAssetUrl('generated/generated/gallery-random-06.dim_1200x1600.jpg'),
-      alt: 'Artisan hands finishing and trimming carpet surface',
-      title: 'Artisan Finishing',
-      category: 'Manufacturing',
-    },
-  ];
+  const imagesWithUrls = galleryImages.map(image => ({
+    ...image,
+    src: getPublicAssetUrl(image.src),
+  }));
 
   const handleImageError = (src: string, title: string) => {
     console.error(`[Gallery] Failed to load image: "${title}"`, {
@@ -214,7 +40,7 @@ export function GallerySection() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1.5">
-          {galleryImages.map((image, index) => (
+          {imagesWithUrls.map((image, index) => (
             <div
               key={index}
               className="group relative aspect-[9/16] overflow-hidden rounded-lg cursor-pointer bg-muted"
@@ -236,6 +62,20 @@ export function GallerySection() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="flex justify-center mt-12">
+          <Button asChild size="lg" className="gap-2">
+            <a 
+              href="https://mrenterprisespnp.com/mr-gallery/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              View More
+              <ExternalLink size={18} />
+            </a>
+          </Button>
         </div>
 
         {/* Visual Divider */}

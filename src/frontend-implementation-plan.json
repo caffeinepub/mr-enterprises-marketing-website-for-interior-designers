@@ -1,35 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Gallery header spacing + section divider",
+  "title": "Remove 6 selected gallery images from the Gallery grid data source",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Increase vertical spacing between Gallery section heading and subheading to match Contact header spacing, scoped only to the Gallery header container.",
-      "acceptanceCriteria": [
-        "The Gallery section header’s <h2> and its descriptive <p> have noticeably more separation than before and visually matches the Contact section header spacing.",
-        "The change is implemented only within the selected Gallery section container element (/main/section[2]/div[1]) and does not affect other sections."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/sections/GallerySection.tsx",
-          "operation": "modify",
-          "description": "Adjust only the Gallery header container markup (the div wrapping the <h2> and <p> within the section’s inner container) to increase spacing between the heading and subheading (e.g., add bottom margin to the <h2> similar to Contact’s mb-[18px], and/or remove the current tight mt-[2px] on the <p>) without affecting any other section."
-        }
-      ]
-    },
-    {
       "id": "REQ-2",
-      "summary": "Add a horizontal divider at the bottom of the Gallery section to separate it from the following section, scoped only to the Gallery section element.",
+      "summary": "Remove the 6 specified gallery image entries from the gallery data array so they no longer render and the grid reflows without empty slots while preserving modal and “View More” behavior.",
       "acceptanceCriteria": [
-        "A horizontal divider (e.g., border-top/HR style) is visible at the bottom of the Gallery section content area.",
-        "The divider is added within the selected Gallery section element (/main/section[2]) and does not introduce dividers in other sections."
+        "The Gallery section no longer renders the 6 selected images in the grid.",
+        "The gallery grid has no blank/empty placeholders where those images used to be; remaining items reflow naturally.",
+        "The modal viewer continues to work for the remaining images (click-to-open and close behavior remains intact).",
+        "No other gallery elements are changed (e.g., keep the existing “View More” button link and behavior unchanged)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/sections/GallerySection.tsx",
+          "path": "frontend/src/data/galleryImages.ts",
           "operation": "modify",
-          "description": "Add a visible bottom-of-section divider (e.g., an <hr> or a full-width element using Tailwind border-t + border-border and appropriate top margin) inside the Gallery <section> element and below the Gallery content container, ensuring the divider is unique to this section and does not impact other sections."
+          "description": "Delete ONLY the six specified image objects from the exported galleryImages array by removing the entries whose src values are: generated/gallery-work-07.dim_1200x1600.jpg, generated/gallery-work-08.dim_1200x1600.jpg, generated/gallery-real-17.dim_1200x1600.jpg, generated/gallery-real-21.dim_1200x1600.jpg, generated/gallery-real-27.dim_1200x1600.jpg, generated/gallery-real-28.dim_1200x1600.jpg. Do not change any other entries, metadata, or ordering beyond removing these items, so the Gallery grid naturally reflows and the modal continues to operate for remaining images."
         }
       ]
     }

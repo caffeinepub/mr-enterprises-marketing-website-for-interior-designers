@@ -14,18 +14,13 @@ This document describes how to deploy the MR Enterprises marketing site to the I
 
 #### 1. Verify Static Assets
 
-Before building, ensure all gallery images are present in the correct location:
+Before building, ensure all gallery images are present and correctly referenced.
 
-**Required gallery assets in `frontend/public/assets/`:**
-- `WhatsApp Image 2026-02-08 at 5.43.17 PM-1.jpeg`
-- `WhatsApp Image 2026-02-08 at 5.43.18 PM-1.jpeg`
+**Gallery Asset Management:**
 
-**Required gallery assets in `frontend/public/assets/gallery/`:**
-- `WhatsApp Image 2026-02-10 at 1.25.31 AM.jpeg`
-- `WhatsApp Image 2026-02-10 at 1.25.32 AM (1).jpeg`
-- `WhatsApp Image 2026-02-10 at 1.25.33 AM (1).jpeg`
-- `WhatsApp Image 2026-02-10 at 1.25.34 AM.jpeg`
+The gallery uses a single source of truth system. All gallery images are defined in:
+- **Data module:** `frontend/src/data/galleryImages.ts`
+- **Storage location:** `frontend/public/assets/` (typically in `assets/gallery/` subdirectory)
 
-**Note:** Filenames contain spaces and special characters. The app uses proper URL encoding to handle these automatically.
+**To verify gallery assets:**
 
-**Verification command:**
